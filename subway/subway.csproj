@@ -76,6 +76,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Admin\EnglishAdmin_main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\XinYongKa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Home\ChooseRoutePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -110,6 +118,12 @@
     </Compile>
     <Compile Include="Admin\chooseSystem.xaml.cs">
       <DependentUpon>chooseSystem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EnglishAdmin_main.xaml.cs">
+      <DependentUpon>EnglishAdmin_main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\XinYongKa.xaml.cs">
+      <DependentUpon>XinYongKa.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -192,13 +206,13 @@
     <Resource Include="Image\ZhengZhouFengGuang.jpg.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\ZongLuXian.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\XiLiuHu.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\LiuZhuang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ZongLuXian.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

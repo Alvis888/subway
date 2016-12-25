@@ -39,52 +39,8 @@ namespace subway.Admin
             ShowTimer.Interval = new TimeSpan(0, 0, 0, 1, 0);
             ShowTimer.Start();
 
-            radioButton_1_1.Checked += RadioButton_Checked;
-            radioButton_1_2.Checked += RadioButton_Checked;
-            radioButton_1_3.Checked += RadioButton_Checked;
-            radioButton_1_4.Checked += RadioButton_Checked;
-            radioButton_1_5.Checked += RadioButton_Checked;
-            radioButton_1_6.Checked += RadioButton_Checked;
-            radioButton_1_7.Checked += RadioButton_Checked;
-            radioButton_1_8.Checked += RadioButton_Checked;
-            radioButton_1_9.Checked += RadioButton_Checked;
-            radioButton_1_10.Checked += RadioButton_Checked;
-            radioButton_1_11.Checked += RadioButton_Checked;
-            radioButton_1_12.Checked += RadioButton_Checked;
-            radioButton_1_13.Checked += RadioButton_Checked;
-            radioButton_1_14.Checked += RadioButton_Checked;
-
-
-            radioButton_2_1.Checked += RadioButton_Checked;
-            radioButton_2_2.Checked += RadioButton_Checked;
-            radioButton_2_2.Checked += RadioButton_Checked;
-            radioButton_2_3.Checked += RadioButton_Checked;
-            radioButton_2_4.Checked += RadioButton_Checked;
-            radioButton_2_5.Checked += RadioButton_Checked;
-            radioButton_2_6.Checked += RadioButton_Checked;
-            radioButton_2_7.Checked += RadioButton_Checked;
-            radioButton_2_8.Checked += RadioButton_Checked;
-            radioButton_2_9.Checked += RadioButton_Checked;
-            radioButton_2_10.Checked += RadioButton_Checked;
-            radioButton_2_11.Checked += RadioButton_Checked;
-            radioButton_2_12.Checked += RadioButton_Checked;
-            radioButton_2_13.Checked += RadioButton_Checked;
-            radioButton_2_14.Checked += RadioButton_Checked;
+           
         }
-
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            RadioButton btn = sender as RadioButton;
-            if (btn.IsChecked == true)
-            {
-                btn.Background = new SolidColorBrush(Colors.Red);
-            }
-            else
-            {
-                btn.Background = new SolidColorBrush(Colors.White);
-            }
-        }
-
         public void ShowCurTimer(object sender, EventArgs e)
         {
             //"星期"+DateTime.Now.DayOfWeek.ToString(("d"))
@@ -96,152 +52,40 @@ namespace subway.Admin
             this.Time.Content += DateTime.Now.ToString("yyyy年MM月dd日");   //yyyy年MM月dd日
             this.Time.Content += " ";
             //获得时分秒
-            this.Time.Content += DateTime.Now.ToString("HH:mm:ss");
+            this.Time.Content += DateTime.Now.ToString("HH:mm:ss:ms");
             //System.Diagnostics.Debug.Print("this.ShowCurrentTime {0}", this.ShowCurrentTime);
         }
-        
 
-        private void btn_Click(object sender, RoutedEventArgs e)
-        {
-            RadioButton btn = sender as RadioButton;
-            if (btn.IsChecked==true)
-            {
-                btn.Background = new SolidColorBrush(Colors.Red);
-            }
-            else
-            {
-                btn.Background = new SolidColorBrush(Colors.Blue);
-            }
-        }
-        /// <summary>
-        /// 点击总图
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             image1.Visibility = Visibility.Visible;
             image2.Visibility = Visibility.Hidden;
             image3.Visibility = Visibility.Hidden;
-
-
-            radioButton_2_1.Visibility = Visibility.Hidden;
-            radioButton_2_2.Visibility = Visibility.Hidden;
-            radioButton_2_2.Visibility = Visibility.Hidden;
-            radioButton_2_3.Visibility = Visibility.Hidden;
-            radioButton_2_4.Visibility = Visibility.Hidden;
-            radioButton_2_5.Visibility = Visibility.Hidden;
-            radioButton_2_6.Visibility = Visibility.Hidden;
-            radioButton_2_7.Visibility = Visibility.Hidden;
-            radioButton_2_8.Visibility = Visibility.Hidden;
-            radioButton_2_9.Visibility = Visibility.Hidden;
-            radioButton_2_10.Visibility = Visibility.Hidden;
-            radioButton_2_11.Visibility = Visibility.Hidden;
-            radioButton_2_12.Visibility = Visibility.Hidden;
-            radioButton_2_13.Visibility = Visibility.Hidden;
-            radioButton_2_14.Visibility = Visibility.Hidden;
-
-            radioButton_1_1.Visibility = Visibility.Hidden;
-            radioButton_1_2.Visibility = Visibility.Hidden;
-            radioButton_1_2.Visibility = Visibility.Hidden;
-            radioButton_1_3.Visibility = Visibility.Hidden;
-            radioButton_1_4.Visibility = Visibility.Hidden;
-            radioButton_1_5.Visibility = Visibility.Hidden;
-            radioButton_1_6.Visibility = Visibility.Hidden;
-            radioButton_1_7.Visibility = Visibility.Hidden;
-            radioButton_1_8.Visibility = Visibility.Hidden;
-            radioButton_1_9.Visibility = Visibility.Hidden;
-            radioButton_1_10.Visibility = Visibility.Hidden;
-            radioButton_1_11.Visibility = Visibility.Hidden;
-            radioButton_1_12.Visibility = Visibility.Hidden;
-            radioButton_1_13.Visibility = Visibility.Hidden;
-            radioButton_1_14.Visibility = Visibility.Hidden;
         }
-        /// <summary>
-        /// 点击1号线
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             image1.Visibility = Visibility.Hidden;
             image2.Visibility = Visibility.Visible;
             image3.Visibility = Visibility.Hidden;
-            radioButton_1_1.Visibility = Visibility.Visible;
-            radioButton_1_2.Visibility = Visibility.Visible;
-            radioButton_1_2.Visibility = Visibility.Visible;
-            radioButton_1_3.Visibility = Visibility.Visible;
-            radioButton_1_4.Visibility = Visibility.Visible;
-            radioButton_1_5.Visibility = Visibility.Visible;
-            radioButton_1_6.Visibility = Visibility.Visible;
-            radioButton_1_7.Visibility = Visibility.Visible;
-            radioButton_1_8.Visibility = Visibility.Visible;
-            radioButton_1_9.Visibility = Visibility.Visible;
-            radioButton_1_10.Visibility = Visibility.Visible;
-            radioButton_1_11.Visibility = Visibility.Visible;
-            radioButton_1_12.Visibility = Visibility.Visible;
-            radioButton_1_13.Visibility = Visibility.Visible;
-            radioButton_1_14.Visibility = Visibility.Visible;
-
-            radioButton_2_1.Visibility = Visibility.Hidden;
-            radioButton_2_2.Visibility = Visibility.Hidden;
-            radioButton_2_2.Visibility = Visibility.Hidden;
-            radioButton_2_3.Visibility = Visibility.Hidden;
-            radioButton_2_4.Visibility = Visibility.Hidden;
-            radioButton_2_5.Visibility = Visibility.Hidden;
-            radioButton_2_6.Visibility = Visibility.Hidden;
-            radioButton_2_7.Visibility = Visibility.Hidden;
-            radioButton_2_8.Visibility = Visibility.Hidden;
-            radioButton_2_9.Visibility = Visibility.Hidden;
-            radioButton_2_10.Visibility = Visibility.Hidden;
-            radioButton_2_11.Visibility = Visibility.Hidden;
-            radioButton_2_12.Visibility = Visibility.Hidden;
-            radioButton_2_13.Visibility = Visibility.Hidden;
-            radioButton_2_14.Visibility = Visibility.Hidden;
         }
-        /// <summary>
-        /// 点击2号线
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             image1.Visibility = Visibility.Hidden;
             image2.Visibility = Visibility.Hidden;
             image3.Visibility = Visibility.Visible;
-            radioButton_2_1.Visibility = Visibility.Visible;
-            radioButton_2_2.Visibility = Visibility.Visible;
-            radioButton_2_2.Visibility = Visibility.Visible;
-            radioButton_2_3.Visibility = Visibility.Visible;
-            radioButton_2_4.Visibility = Visibility.Visible;
-            radioButton_2_5.Visibility = Visibility.Visible;
-            radioButton_2_6.Visibility = Visibility.Visible;
-            radioButton_2_7.Visibility = Visibility.Visible;
-            radioButton_2_8.Visibility = Visibility.Visible;
-            radioButton_2_9.Visibility = Visibility.Visible;
-            radioButton_2_10.Visibility = Visibility.Visible;
-            radioButton_2_11.Visibility = Visibility.Visible;
-            radioButton_2_12.Visibility = Visibility.Visible;
-            radioButton_2_13.Visibility = Visibility.Visible;
-            radioButton_2_14.Visibility = Visibility.Visible;
-
-            radioButton_1_1.Visibility = Visibility.Hidden;
-            radioButton_1_2.Visibility = Visibility.Hidden;
-            radioButton_1_2.Visibility = Visibility.Hidden;
-            radioButton_1_3.Visibility = Visibility.Hidden;
-            radioButton_1_4.Visibility = Visibility.Hidden;
-            radioButton_1_5.Visibility = Visibility.Hidden;
-            radioButton_1_6.Visibility = Visibility.Hidden;
-            radioButton_1_7.Visibility = Visibility.Hidden;
-            radioButton_1_8.Visibility = Visibility.Hidden;
-            radioButton_1_9.Visibility = Visibility.Hidden;
-            radioButton_1_10.Visibility = Visibility.Hidden;
-            radioButton_1_11.Visibility = Visibility.Hidden;
-            radioButton_1_12.Visibility = Visibility.Hidden;
-            radioButton_1_13.Visibility = Visibility.Hidden;
-            radioButton_1_14.Visibility = Visibility.Hidden;
         }
 
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            EnglishAdmin_main choose = new EnglishAdmin_main();
+            choose.ShowDialog();
+        }
 
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

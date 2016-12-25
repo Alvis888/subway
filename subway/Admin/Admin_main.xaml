@@ -12,9 +12,10 @@
     <Viewbox>
         <Grid  Height="433" Width="636" Margin="0" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="121*"/>
-                <ColumnDefinition Width="323*"/>
-                <ColumnDefinition Width="132*"/>
+                <ColumnDefinition Width="133*"/>
+                <ColumnDefinition Width="357*"/>
+                <ColumnDefinition Width="92*"/>
+                <ColumnDefinition Width="54*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="46*"/>
@@ -314,7 +315,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="English" Margin="18,288,40,57" Grid.Row="1" Grid.RowSpan="2"   FontFamily="微软雅黑">
+            <Button Content="English" Margin="18,288,40,57" Grid.Row="1" Grid.RowSpan="2"   FontFamily="微软雅黑" Click="Button_Click_3">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -386,7 +387,43 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <StackPanel Grid.Column="2" Height="127" VerticalAlignment="Top" Margin="13,61,8,0"  Grid.RowSpan="2">
+            <Button Content="取消" HorizontalAlignment="Left" Margin="54,288,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.Column="2" Grid.RowSpan="2"   FontFamily="微软雅黑" Grid.ColumnSpan="2">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="Silver" Offset="0.5" />
+                                    <GradientStop Color="White" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                <Setter Property="Border.Background" TargetName="PART_Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="Silver" Offset="0.0" />
+                                            <GradientStop Color="White" Offset="0.5" />
+                                            <GradientStop Color="Silver" Offset="0.0" />
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                <Setter Property="UIElement.Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <StackPanel Grid.Column="2" Height="127" VerticalAlignment="Top" Margin="13,61,8,0"  Grid.RowSpan="2" Grid.ColumnSpan="2">
                 <Label Content="选择路线" Margin="0,0,13,0" FontWeight="Bold" RenderTransformOrigin="0.443,-0.275" HorizontalAlignment="Right" Width="70"   FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
                 <Button Content="总图" Margin="0,0,8,0" HorizontalAlignment="Right" Width="77"  FontFamily="微软雅黑" Click="Button_Click">
                     <Button.Template>
@@ -497,7 +534,7 @@
                     </Button.Template>
                 </Button>
             </StackPanel>
-            <Button Content="返回" Grid.Column="2" Margin="32,5,8,0" VerticalAlignment="Top" FontFamily="微软雅黑">
+            <Button Content="返回" Grid.Column="2" Margin="37,5,3,0" VerticalAlignment="Top" FontFamily="微软雅黑" Click="Button_Click_4" Grid.ColumnSpan="2">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -533,43 +570,50 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Label Content="已投入金额" Grid.Column="2" Margin="25,121,20,0" Grid.Row="1" VerticalAlignment="Top"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+            <Label Content="已投入金额" Grid.Column="2" Margin="25,121,20,0" Grid.Row="1" VerticalAlignment="Top"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" Grid.ColumnSpan="2"/>
             <Label Content="0" Grid.Column="2" HorizontalAlignment="Left" Margin="39,152,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
             <Label Content="元" Grid.Column="2" HorizontalAlignment="Left" Margin="63,157,0,0" Grid.Row="1" VerticalAlignment="Top"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
-            <Image x:Name="image1" HorizontalAlignment="Left" Height="279" Margin="15,16,0,0" VerticalAlignment="Top" Width="336" Source="../Image/ZongLuXian.jpg" Grid.Column="1" Visibility="Hidden" Grid.Row="1"/>
-            <Image x:Name="image2" HorizontalAlignment="Left" Height="279" Margin="15,80,0,0" VerticalAlignment="Top" Width="336" Source="../Image/XiLiuHu.jpg" Grid.Column="1" Grid.RowSpan="2" Visibility="Hidden"/>
-            <Label x:Name="Time" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="271,25,-70,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="302"/>
-            <!--1号线-->
-            <RadioButton x:Name="radioButton_1_1"  Grid.Column="1" HorizontalAlignment="Left" Margin="40,135,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_2" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="60,133,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_3" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="80,133,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_4" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="101,133,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_5" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="122,133,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_6" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="143,133,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_7" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="164,133,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_8" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="185,133,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_9" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="206,133,0,0" Grid.Row="1" VerticalAlignment="Top"   Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_10" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="226,133,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_11" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="247,133,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_12" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="268,133,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_13" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="289,133,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <RadioButton x:Name="radioButton_1_14" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="309,133,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden"/>
-            <!--1号线-->
-            <Image x:Name="image3" HorizontalAlignment="Left" Height="279" Margin="15,80,0,0" VerticalAlignment="Top" Width="336" Source="../Image/LiuZhuang.png" Grid.Column="1" Grid.RowSpan="2" Visibility="Visible"/>
-            <RadioButton x:Name="radioButton_2_1"  Grid.Column="1" HorizontalAlignment="Left" Margin="40,135,0,0" Grid.Row="1" VerticalAlignment="Top" />
-            <RadioButton x:Name="radioButton_2_2" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="60,133,0,0" Grid.Row="1" VerticalAlignment="Top" />
-            <RadioButton x:Name="radioButton_2_3" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="80,133,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-            <RadioButton x:Name="radioButton_2_4" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="101,133,0,0" Grid.Row="1" VerticalAlignment="Top" />
-            <RadioButton x:Name="radioButton_2_5" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="122,133,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-            <RadioButton x:Name="radioButton_2_6" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="143,133,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-            <RadioButton x:Name="radioButton_2_7" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="164,133,0,0" Grid.Row="1" VerticalAlignment="Top" />
-            <RadioButton x:Name="radioButton_2_8" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="185,133,0,0" Grid.Row="1" VerticalAlignment="Top" />
-            <RadioButton x:Name="radioButton_2_9" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="206,133,0,0" Grid.Row="1" VerticalAlignment="Top" />
-            <RadioButton x:Name="radioButton_2_10" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="226,133,0,0" Grid.Row="1" VerticalAlignment="Top" />
-            <RadioButton x:Name="radioButton_2_11" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="247,133,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-            <RadioButton x:Name="radioButton_2_12" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="268,133,0,0" Grid.Row="1" VerticalAlignment="Top" />
-            <RadioButton x:Name="radioButton_2_13" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="289,133,0,0" Grid.Row="1" VerticalAlignment="Top" />
-            <RadioButton x:Name="radioButton_2_14" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="309,133,0,0" Grid.Row="1" VerticalAlignment="Top" />
+            <Image x:Name="image1" HorizontalAlignment="Left" Height="279" Margin="15,16,0,0" VerticalAlignment="Top" Width="336" Source="../Image/ZongLuXian.jpg" Grid.Column="1" Visibility="Visible" Grid.Row="1"/>
+            <Image x:Name="image2" HorizontalAlignment="Left" Height="279" Margin="15,14,0,0" VerticalAlignment="Top" Width="336" Source="../Image/XiLiuHu.jpg" Grid.Column="1" Visibility="Hidden" Grid.Row="1"/>
+            <Image x:Name="image3" HorizontalAlignment="Left" Height="279" Margin="15,14,0,0" VerticalAlignment="Top" Width="336" Source="../Image/LiuZhuang.png" Grid.Column="1" Visibility="Hidden" Grid.Row="1"/>
+            <Label x:Name="Time" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="271,25,-70,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="302"/>
+            <Button Content="确定购票" HorizontalAlignment="Left" Margin="327,285,0,60" Grid.Row="1" Width="66" Grid.Column="1" Grid.RowSpan="2"   FontFamily="微软雅黑" Grid.ColumnSpan="2">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" x:Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="Silver" Offset="0.5" />
+                                    <GradientStop Color="White" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="PART_Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="Silver" Offset="0.0" />
+                                            <GradientStop Color="White" Offset="0.5" />
+                                            <GradientStop Color="Silver" Offset="0.0" />
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
         </Grid>
     </Viewbox>
 </Window>

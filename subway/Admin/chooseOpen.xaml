@@ -20,7 +20,7 @@
             <Label Content="充值数额：" HorizontalAlignment="Left" Margin="26,93,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
             <TextBox HorizontalAlignment="Left" Height="23" Margin="113,96,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="69"/>
             <Button Content="投币充值" HorizontalAlignment="Left" Margin="26,139,0,0" VerticalAlignment="Top" Width="75"/>
-            <Button Content="信用卡充值" HorizontalAlignment="Left" Margin="129,140,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button Content="信用卡充值" HorizontalAlignment="Left" Margin="129,140,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
             <Button Content="退出" HorizontalAlignment="Left" Height="33" Margin="370,282,0,-23" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.551,0.502"/>
             <Button Content="确定" HorizontalAlignment="Left" Height="23" Margin="26,282,0,-13" VerticalAlignment="Top" Width="75"/>
         </Grid>

@@ -23,7 +23,7 @@ namespace subway
     /// </summary>
     public partial class MainWindow : Window
     {
-       
+        public static string username;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,6 +35,7 @@ namespace subway
             double y1 = SystemParameters.PrimaryScreenHeight;//得到屏幕整体高度
             this.Width = x1;//设置窗体宽度
             this.Height = y1;//设置窗体高度
+            this.Title = "登陆";
             
 
         }
@@ -59,7 +60,9 @@ namespace subway
         private void button_Click(object sender, RoutedEventArgs e)
         {
             BaseFunc baseFc = new BaseFunc();
-            string username = textBox_username.Text.Trim();
+            username = textBox_username.Text.Trim();
+
+
             string password = passwordBox_password.Password.Trim();
             if(username==""||password=="")
             {
@@ -78,9 +81,10 @@ namespace subway
                 }
                 else
                 {
-                    MessageBox.Show("无此用户或信息错误");
+                    MessageBox.Show("登陆失败，无此用户或信息错误");
                 }
             }
+            MessageBox.Show(username);
            
         }
         /// <summary>
@@ -92,11 +96,19 @@ namespace subway
         {
            this.Close();
         }
-
+        /// <summary>
+        /// 跳转到找回密码页面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Hyperlink_getPWD_Click(object sender, RoutedEventArgs e)
         {
             Admin_getPassword getpwd = new Admin_getPassword();
             getpwd.Show();
+        }
+        public string getUsername()
+        {
+            return textBox_username.Text;
         }
     }
 }

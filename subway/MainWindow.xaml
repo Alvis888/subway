@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:subway"
         mc:Ignorable="d"
-        Title="MainWindow" Margin="0" Height="436.567" Width="704.105"  WindowState="Maximized">
+        Title="MainWindow" Margin="0" Height="1478.562" Width="3010.497"  WindowState="Maximized">
     <Window.Background>
         <ImageBrush ImageSource="Image/login_bg.jpg"/>
     </Window.Background>
     <Viewbox>
         <Grid  Height="591" Width="1022">
-            <Grid.Background>
+            <!--<Grid.Background>
                 <ImageBrush   ImageSource="/Image/login_bg.jpg"  />
-            </Grid.Background>
+            </Grid.Background>-->
 
             <Label x:Name="label" Content="Login" Foreground="White" Margin="122,43,136,0" VerticalAlignment="Top" FontFamily="微软雅黑" FontSize="45px"  HorizontalContentAlignment="Center" />
             <TextBox x:Name="textBox_username" Margin="374,163,382,380" TextWrapping="Wrap" Text="username"  Opacity="0.5"  FontFamily="微软雅黑" FontSize="25px" />
             <PasswordBox x:Name="passwordBox_password" Password="********" Margin="374,232,382,314"    Opacity="0.5" FontFamily="微软雅黑" FontSize="25px" ToolTip="please  input your password"/>
-            <Button x:Name="button" Content="OK" HorizontalAlignment="Left" Margin="370,335,0,0" VerticalAlignment="Top" Width="94" Height="41" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" Click="button_Click" >
+            <Button x:Name="button" IsDefault="True" Content="OK" HorizontalAlignment="Left" Margin="370,335,0,0" VerticalAlignment="Top" Width="94" Height="41" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" Click="button_Click" >
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -54,7 +54,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="546,335,0,0" VerticalAlignment="Top" Width="94" Height="41" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" Click="button1_Click" RenderTransformOrigin="0.553,1.355" >
+            <Button x:Name="button1" IsCancel="True" Content="Cancel" HorizontalAlignment="Left" Margin="546,335,0,0" VerticalAlignment="Top" Width="94" Height="41" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" Click="button1_Click" RenderTransformOrigin="0.553,1.355" >
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">

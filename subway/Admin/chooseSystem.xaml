@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:subway.Admin"
         mc:Ignorable="d"
-        Title="chooseSystem" Height="500" Width="525" WindowStartupLocation="CenterScreen">
+        WindowStyle="ToolWindow"
+        Title=" 选择登陆系统" Height="500" Width="525" WindowStartupLocation="CenterScreen">
     <Grid >
         <Grid.Background>
             <ImageBrush   ImageSource="/Image/login_bg.jpg"  />
         </Grid.Background>
         <Button x:Name="button_Ticket" Content="乘客购票系统" Margin="76,67,76,0" VerticalAlignment="Top" Height="76" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951" Click="button_Ticket_Click" >
-
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -47,7 +47,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="button_Charge" Content="开户充值系统" Margin="76,226,76,0" VerticalAlignment="Top" Height="76" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951" Click="button_Charge_Click" >
+        <Button x:Name="button_Charge" Content="开户充值系统" Margin="76,277,76,0" VerticalAlignment="Top" Height="76" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951" Click="button_Charge_Click" >
 
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">

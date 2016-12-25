@@ -25,29 +25,37 @@ namespace subway.DAO
             User member = new User();
             //连接本地数据库
             SqlConnection conn = connectdb.ConnectDataBase();
-            //打开数据库
-            conn.Open();
-            //创建查询语句
-            SqlCommand querySingleInfo = conn.CreateCommand();
-            querySingleInfo.CommandText = "SELECT * FROM coustom where UserName=" + "'" + username + "'";
-            SqlDataReader singleInfoReader = querySingleInfo.ExecuteReader();
-            //有多行数据，用while循环
-            while (singleInfoReader.Read())
+            try
             {
-                member.username = singleInfoReader["UserName"].ToString().Trim();
-                if (member.username.Equals(username))
+                //打开数据库
+                conn.Open();
+                //创建查询语句
+                SqlCommand querySingleInfo = conn.CreateCommand();
+                querySingleInfo.CommandText = "SELECT * FROM coustom where UserName=" + "'" + username + "'";
+                SqlDataReader singleInfoReader = querySingleInfo.ExecuteReader();
+                //有多行数据，用while循环
+                while (singleInfoReader.Read())
                 {
-                    flag = true;
+                    member.username = singleInfoReader["UserName"].ToString().Trim();
+                    if (member.username.Equals(username))
+                    {
+                        flag = true;
+                    }
+                    else
+                    {
+                        flag = false;
+                    }
                 }
-                else
-                {
-                    flag = false;
-                }
+                //关闭查询
+                singleInfoReader.Close();
+                //关闭数据库连接
+                conn.Close();
             }
-            //关闭查询
-            singleInfoReader.Close();
-            //关闭数据库连接
-            conn.Close();
+            catch (SqlException e)
+            {
+                flag = false;
+            }
+
             return flag;
         }
 
@@ -69,7 +77,7 @@ namespace subway.DAO
                     conn.Open();
                     //创建查询语句
                     SqlCommand querySingleInfo = conn.CreateCommand();
-                   
+
                     querySingleInfo.CommandText = "SELECT Password FROM admin where UserName=" + "'" + username + "'";
                     SqlDataReader singleInfoReader = querySingleInfo.ExecuteReader();
                     //有多行数据，用while循环
@@ -155,7 +163,7 @@ namespace subway.DAO
                 SqlCommand querySingleInfo = conn.CreateCommand();
                 //删除Member表信息
                 querySingleInfo.CommandText = "delete admin  where UserName=" + "'" + username + "'";
-               
+
                 int memberResult = querySingleInfo.ExecuteNonQuery();
                 //关闭数据库连接
                 conn.Close();
@@ -170,8 +178,43 @@ namespace subway.DAO
                 flag = false;
             }
             return flag;
-        } 
+        }
         #endregion
+
+
+        /// <summary>
+        /// 存储票务信息
+        /// </summary>
+        /// <param name="ticket"></param>
+        /// <returns></returns>
+        public string SaveTicketInfo(Ticket ticket)
+        {
+            string returnInfo = "";
+            //判断用户名是否为空
+
+            try
+            {
+                SqlConnection conn = connectdb.ConnectDataBase();
+                string sql;
+                conn.Open();
+                sql = "INSERT INTO ticket(username,startAddress,endAddress,money,phone ,number,buytime,email) VALUES ('" + ticket.username + "','" + ticket.startAddress + "','" +ticket.endAddress + "','" + ticket.money + "','" + ticket.phone + "','" + ticket.ticketNum + "','" + ticket.buyTime + "','" + ticket.email + "')";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                int result = cmd.ExecuteNonQuery();
+                conn.Close();
+                returnInfo = "Success";
+            }
+            catch (SqlException e)
+            {
+                returnInfo = e.ToString();
+                
+                //FileStream fs = new FileStream("c:\\text\\log2.txt", FileMode.Append, FileAccess.Write);
+                //StreamWriter sw = new StreamWriter(fs); // 创建写入流
+                //sw.WriteLine(e.ToString()); // 写入
+                //sw.Close();
+            }
+
+            return returnInfo;
+        }
 
     }
 }

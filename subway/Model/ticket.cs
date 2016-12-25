@@ -28,5 +28,18 @@ namespace subway.Model
         /// 购买时间
         /// </summary>`
         public string buyTime { set; get; }
+        /// <summary>
+        /// 购票数量
+        /// </summary>
+        public int ticketNum { set; get; }
+        /// <summary>
+        /// 用户手机号
+        /// </summary>
+        public int phone { set; get; }
+        /// <summary>
+        /// 用户邮箱
+        /// </summary>
+        public string email { set; get; }
+
     }
 }

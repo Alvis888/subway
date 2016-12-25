@@ -1,4 +1,5 @@
-﻿using System;
+﻿using subway.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,12 @@ namespace subway.Home
     /// </summary>
     public partial class Home_mainPage : Window
     {
-          private DispatcherTimer ShowTimer;
+        private DispatcherTimer ShowTimer;
+        Ticket info = new Ticket();
+
+       
+
+
         public Home_mainPage()
         {
             InitializeComponent();
@@ -52,6 +58,12 @@ namespace subway.Home
             //获得时分秒
             this.Time.Content += DateTime.Now.ToString("HH:mm:ss:ms");
             //System.Diagnostics.Debug.Print("this.ShowCurrentTime {0}", this.ShowCurrentTime);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //Home_ticketInfo ticketInfo = new Home_ticketInfo();
+            //ticketInfo.Show();
         }
     }
 }

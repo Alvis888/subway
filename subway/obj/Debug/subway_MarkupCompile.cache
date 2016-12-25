@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Administrator\Desktop\subway\subway\obj\Debug\
+E:\C#作业\subway\subway\obj\Debug\
 subway
 none
 false
 DEBUG;TRACE
-C:\Users\Administrator\Desktop\subway\subway\App.xaml
-12-720669401
+E:\C#作业\subway\subway\App.xaml
+112041289179
 
-21978898304
+19373055915
 14-1001767708
-Admin\Admin_deleteUser.xaml;Admin\Admin_getPassword.xaml;Admin\Admin_main.xaml;Admin\chooseOpen.xaml;Admin\chooseSystem.xaml;Admin\EnglishAdmin_main.xaml;Admin\XinYongKa.xaml;Home\ChooseRoutePage.xaml;Home\Home_fasttickets.xaml;Home\Home_mainPage.xaml;Home\Home_ticketInfo.xaml;MainWindow.xaml;
+Admin\Admin_deleteUser.xaml;Admin\Admin_getPassword.xaml;Admin\Admin_main.xaml;Admin\chooseOpen.xaml;Admin\chooseSystem.xaml;Home\ChooseRoutePage.xaml;Home\Home_fasttickets.xaml;Home\Home_mainPage.xaml;Home\Home_ticketInfo.xaml;MainWindow.xaml;XamlResource\Languages.xaml;
 
 False
 

@@ -30,7 +30,8 @@ namespace subway.DAO
         public string GetSendpasswrord(string username, string email)
         {
             User member = new User();
-            if (baseF.GetCheckUser(username))//检查是否已被注册
+            string info = baseF.GetCheckUser(username);
+            if (info!="")//检查是否已被注册
             {
                 try
                 {
@@ -39,7 +40,7 @@ namespace subway.DAO
                     conn.Open();
                     //创建查询语句
                     SqlCommand querySingleInfo = conn.CreateCommand();
-                        querySingleInfo.CommandText = "SELECT email FROM coustom where UserName=" + "'" + username + "'";
+                        querySingleInfo.CommandText = "SELECT email FROM "+info+" where UserName=" + "'" + username + "'";
                     SqlDataReader singleInfoReader = querySingleInfo.ExecuteReader();
                     //有多行数据，用while循环
                     while (singleInfoReader.Read())
@@ -119,7 +120,7 @@ namespace subway.DAO
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = true;
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;//指定电子邮件发送方式        
-                smtpClient.Host = "smtp.126.com";//指定SMTP服务器      
+                smtpClient.Host = "smtp.qq.com";//指定SMTP服务器      
                 System.Net.NetworkCredential nc = new System.Net.NetworkCredential("1312373957@qq.com", "ccfknzwurpfjjhic");
                 smtpClient.Credentials = nc;//用户名和授权码
                 // 发送邮件设置        

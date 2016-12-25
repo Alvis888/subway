@@ -27,7 +27,7 @@
                         <ComboBoxItem>女</ComboBoxItem>
                         <ComboBoxItem>其他</ComboBoxItem>
                     </ComboBox>
-                    <Button  x:Name="button_newCancel" Content="退出" HorizontalAlignment="Left" Height="23" Margin="139,169,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.551,0.502" Click="button_newCancel_Click">
+                    <Button  x:Name="button_newCancel" Content="退出" HorizontalAlignment="Left" Height="23" Margin="10,170,0,-1" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.551,0.502" Click="button_newCancel_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -63,7 +63,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button x:Name="button_newOK" Content="确定" HorizontalAlignment="Left" Height="23" Margin="10,169,0,0" VerticalAlignment="Top" Width="57" Click="button_newOK_Click">
+                    <Button x:Name="button_newOK" Content="确定" HorizontalAlignment="Left" Height="23" Margin="142,170,0,-1" VerticalAlignment="Top" Width="57" Click="button_newOK_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -111,7 +111,7 @@
                     <TextBox  x:Name="textbox_chargeRemainingMoney" HorizontalAlignment="Left" Height="23" Margin="98,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="101" IsReadOnly="True"/>
                     <Label Content="充值数额：" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <TextBox x:Name="textbox_chargeNumber" HorizontalAlignment="Left" Height="23" Margin="98,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" TextChanged="textbox_chargeNumber_TextChanged"/>
-                    <Button  x:Name="buttonChargeOK"  Content="确定" HorizontalAlignment="Left" Height="23" Margin="10,161,0,0" VerticalAlignment="Top" Width="57" Click="buttonChargeOK_Click">
+                    <Button  x:Name="buttonChargeOK"  Content="确定" HorizontalAlignment="Left" Height="23" Margin="142,166,0,0" VerticalAlignment="Top" Width="57" Click="buttonChargeOK_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -147,7 +147,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button  x:Name="buttonChargeCanel" Content="退出" HorizontalAlignment="Left" Height="23" Margin="141,161,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.551,0.502" Click="buttonChargeCanel_Click">
+                    <Button  x:Name="buttonChargeCanel" Content="退出" HorizontalAlignment="Left" Height="23" Margin="10,166,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.516,1.163" Click="buttonChargeCanel_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -196,7 +196,7 @@
                     <TextBox x:Name="textBox_deletePhone" HorizontalAlignment="Left" Height="23" Margin="62,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox_deletePassword_TextChanged" />
                     <TextBox x:Name="textBox_deletePassword" HorizontalAlignment="Left" Height="23" Margin="62,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox_deletePassword_TextChanged"/>
                     <TextBox x:Name="textBox_deleteMoney" IsReadOnly="True"  HorizontalAlignment="Left" Height="23" Margin="62,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="button" Content="OK" HorizontalAlignment="Left" Margin="361,7,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="button_Click" >
+                    <Button x:Name="button" Content="确定" HorizontalAlignment="Left" Margin="361,7,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="button_Click" >
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -232,7 +232,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="361,50,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="button1_Click" >
+                    <Button x:Name="button1" Content="取消" HorizontalAlignment="Left" Margin="361,50,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="button1_Click" >
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">

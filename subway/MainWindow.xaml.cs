@@ -23,7 +23,11 @@ namespace subway
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// 静态变量，获取用户名，用于跨页面传值
+        /// </summary>
         public static string username;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -36,16 +40,24 @@ namespace subway
             this.Width = x1;//设置窗体宽度
             this.Height = y1;//设置窗体高度
             this.Title = "登陆";
-            
-
         }
 
+        /// <summary>
+        /// 双击密码框
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PasswordBox_password_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             passwordBox_password.Password = "";
             textBox_username.Text = "";
         }
 
+        /// <summary>
+        /// 双击用户名窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_username_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             passwordBox_password.Password = "";
@@ -71,8 +83,8 @@ namespace subway
             }
             else
             {
-                bool isLogin = baseFc.GetLoginCheck(username, password);
-                if(isLogin)
+                string loginInfo = baseFc.GetLoginCheck(username, password);
+                if(loginInfo=="admin")
                 {
                     //this.Close();
                     // MessageBox.Show("登陆成功");
@@ -80,13 +92,34 @@ namespace subway
                     chose.ShowDialog();
                 }
                 else
+                if (loginInfo == "coustom")
                 {
-                    MessageBox.Show("登陆失败，无此用户或信息错误");
+                    //this.Close();
+                    // MessageBox.Show("登陆成功");
+                    admin_main main = new admin_main();
+                   // chooseSystem chose = new chooseSystem();
+                    main.ShowDialog();
+                }
+                else
+                if(loginInfo=="failed")
+                {
+                    MessageBox.Show("登陆失败");
+                }
+                else
+                    if(loginInfo=="not"|| loginInfo == "")
+                {
+                    MessageBox.Show("用户不存在");
+
+                }
+                else
+                {
+                    MessageBox.Show("密码错误");
                 }
             }
-            MessageBox.Show(username);
+           // MessageBox.Show(username);
            
         }
+       
         /// <summary>
         /// 点击Cancel关闭当前窗口
         /// </summary>
@@ -96,6 +129,7 @@ namespace subway
         {
            this.Close();
         }
+       
         /// <summary>
         /// 跳转到找回密码页面
         /// </summary>
@@ -106,7 +140,12 @@ namespace subway
             Admin_getPassword getpwd = new Admin_getPassword();
             getpwd.Show();
         }
-        public string getUsername()
+       
+        /// <summary>
+        /// 获取用户名
+        /// </summary>
+        /// <returns></returns>
+        private string getUsername()
         {
             return textBox_username.Text;
         }

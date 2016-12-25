@@ -102,7 +102,7 @@ namespace subway.Home
 
         private void Button_cancelGiveMoney_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

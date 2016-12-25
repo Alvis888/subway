@@ -20,8 +20,12 @@ namespace subway.DAO
         /// <param name="username">用户名（主键）</param>
         /// <returns>true  已注册</returns>
         /// <returns>false 未注册</returns>
-        public bool GetCheckUser(string username)
+        public string GetCheckUser(string username)
         {
+
+            string returnInfo = "";
+            //判断用户名是否为空
+
             User member = new User();
             //连接本地数据库
             SqlConnection conn = connectdb.ConnectDataBase();
@@ -40,10 +44,45 @@ namespace subway.DAO
                     if (member.username.Equals(username))
                     {
                         flag = true;
+                        returnInfo = "coustom";
+                        //关闭查询
+                        singleInfoReader.Close();
+                        //关闭数据库连接
+                        conn.Close();
+                        return returnInfo;
                     }
                     else
                     {
                         flag = false;
+                        returnInfo = "";
+                    }
+                }
+                //关闭查询
+                singleInfoReader.Close();
+                //关闭数据库连接
+                conn.Close();
+
+
+
+                //打开数据库
+                conn.Open();
+                //创建查询语句
+                querySingleInfo = conn.CreateCommand();
+                querySingleInfo.CommandText = "SELECT * FROM admin  where UserName=" + "'" + username + "'";
+                singleInfoReader = querySingleInfo.ExecuteReader();
+                //有多行数据，用while循环
+                while (singleInfoReader.Read())
+                {
+                    member.username = singleInfoReader["UserName"].ToString().Trim();
+                    if (member.username.Equals(username))
+                    {
+                        flag = true;
+                        returnInfo = "admin";
+                    }
+                    else
+                    {
+                        flag = false;
+                        returnInfo = "";
                     }
                 }
                 //关闭查询
@@ -56,7 +95,7 @@ namespace subway.DAO
                 flag = false;
             }
 
-            return flag;
+           return returnInfo;
         }
 
         /// <summary>
@@ -65,10 +104,14 @@ namespace subway.DAO
         /// <param name="username">用户名</param>
         /// <param name="password">密码</param>
         /// <returns>true/false</returns>
-        public bool GetLoginCheck(string username, string password)
+        public string GetLoginCheck(string username, string password)
         {
+            string returnInfo = "";
+            //判断用户名是否为空
+
             User member = new User();
-            if (GetCheckUser(username))//检查是否已被注册
+            string log_Info = GetCheckUser(username);
+            if (log_Info!="")//检查是否已被注册
             {
                 try
                 {
@@ -78,7 +121,7 @@ namespace subway.DAO
                     //创建查询语句
                     SqlCommand querySingleInfo = conn.CreateCommand();
 
-                    querySingleInfo.CommandText = "SELECT Password FROM admin where UserName=" + "'" + username + "'";
+                    querySingleInfo.CommandText = "SELECT Password FROM "+log_Info+" where UserName=" + "'" + username + "'";
                     SqlDataReader singleInfoReader = querySingleInfo.ExecuteReader();
                     //有多行数据，用while循环
                     while (singleInfoReader.Read())
@@ -87,22 +130,23 @@ namespace subway.DAO
                     }
                     if (member.password.Equals(password))
                     {
-                        flag = true;
+                        returnInfo = log_Info;
                     }
                     else
                     {
                         flag = false;
+                        returnInfo = "password";
                     }
                     //关闭查询
                     singleInfoReader.Close();
                     //关闭数据库连接
                     conn.Close();
                 }
-                catch { flag = false; }
+                catch { returnInfo = "failed"; }
             }
             else
-                flag = false;
-            return flag;
+                returnInfo = "not";
+            return returnInfo;
         }
 
         /// <summary>
@@ -118,7 +162,8 @@ namespace subway.DAO
             {
                 returnInfo = "Username is null. ";
             }
-            if (GetCheckUser(member.username) == false)
+            string register_Info = GetCheckUser(member.username);
+            if (register_Info == "")
             {
                 member.sex = (member.sex == "male" ? "true" : "false");
                 try
@@ -190,8 +235,6 @@ namespace subway.DAO
         public string SaveTicketInfo(Ticket ticket)
         {
             string returnInfo = "";
-            //判断用户名是否为空
-
             try
             {
                 SqlConnection conn = connectdb.ConnectDataBase();

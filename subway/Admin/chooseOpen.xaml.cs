@@ -154,6 +154,11 @@ namespace subway.Admin
         #endregion
 
         #region 开户
+        /// <summary>
+        /// 密码框变化
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox_newPassword_TextChanged(object sender, TextChangedEventArgs e)
         {
             string username = textBox_newName.Text;
@@ -325,7 +330,7 @@ namespace subway.Admin
         {
             string password=textBox_deletePassword.Text;
             string phone = textBox_deletePhone.Text;
-            string DB_pwd=null;
+            string DB_pwd="";
             if(password==""|| password==null)
             {
                 MessageBox.Show("请输入密码");

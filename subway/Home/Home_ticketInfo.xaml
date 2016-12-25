@@ -35,7 +35,7 @@
             <Label x:Name="label1" Content="总   价：" HorizontalAlignment="Left" Margin="32,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.766,0.606" Foreground="White"/>
             <TextBox x:Name="textBox_Sum" IsReadOnly="True" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
 
-            <Button x:Name="Button_giveMoney" Content="付款" HorizontalAlignment="Left" Margin="32,166,0,0" VerticalAlignment="Top" Width="75" Height="25" Opacity="0.7" Click="Button_giveMoney_Click" >
+            <Button x:Name="Button_giveMoney" Content="付款" IsDefault="true" HorizontalAlignment="Left" Margin="156,166,0,0" VerticalAlignment="Top" Width="75" Height="25" Opacity="0.7" Click="Button_giveMoney_Click" >
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -71,7 +71,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="Button_cancelGiveMoney" Content="取消" HorizontalAlignment="Left" Margin="156,166,0,0" VerticalAlignment="Top" Width="75" Height="25" Opacity="0.7" Click="Button_cancelGiveMoney_Click">
+            <Button x:Name="Button_cancelGiveMoney" Content="取消" IsCancel="False" HorizontalAlignment="Left" Margin="32,166,0,0" VerticalAlignment="Top" Width="75" Height="25" Opacity="0.7" Click="Button_cancelGiveMoney_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">

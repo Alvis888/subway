@@ -52,10 +52,5 @@ namespace MainChoose
             image2.Visibility = Visibility.Hidden;
             image3.Visibility = Visibility.Visible;
         }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

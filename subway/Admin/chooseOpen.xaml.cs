@@ -50,5 +50,11 @@ namespace subway.Admin
             System.Windows.Media.Effects.DropShadowEffect ds = new System.Windows.Media.Effects.DropShadowEffect();
             Welcome.Effect = ds;  
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            XinYongKa choose = new XinYongKa();
+            choose.ShowDialog();
+        }
     }
 }

@@ -5,29 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:subway.Admin"
         mc:Ignorable="d"
-        Title="admin_main" Height="470" Width="740" WindowStartupLocation="Manual" WindowState="Maximized">
+        Title="admin_main" Height="2150.556" Width="4082.593" WindowStartupLocation="Manual" WindowState="Maximized">
     <Window.Background>
         <ImageBrush ImageSource="/subway;component/Image/Nipic_13154091_20150814163659003000.jpg"/>
     </Window.Background>
-    <Viewbox>
+    <Viewbox Margin="0,0,83,69">
         <Grid  Height="433" Width="636" Margin="0" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="133*"/>
-                <ColumnDefinition Width="357*"/>
-                <ColumnDefinition Width="92*"/>
-                <ColumnDefinition Width="54*"/>
+                <ColumnDefinition Width="121*"/>
+                <ColumnDefinition Width="323*"/>
+                <ColumnDefinition Width="132*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="46*"/>
-                <RowDefinition Height="205*"/>
-                <RowDefinition Height="49*"/>
+                <RowDefinition Height="66*"/>
+                <RowDefinition Height="307*"/>
+                <RowDefinition Height="60*"/>
             </Grid.RowDefinitions>
-            <Label Content="当前位置:" Grid.Column="1" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.576,0.57" FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
-            <Label Content="郑州东站" Grid.Column="1" HorizontalAlignment="Left" Margin="80,6,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
+            <Label Content="当前位置:" Grid.Column="1" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.576,0.57" FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" Height="26" Width="61"/>
+            <Label Content="二七广场 " Grid.Column="1" HorizontalAlignment="Left" Margin="80,6,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" Height="34" Width="82"/>
             <Label Content="郑州地铁" HorizontalAlignment="Left" Margin="0,0,0,42"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" FontWeight="Black" FontStyle="Italic" Width="64"/>
             <Label Content="ZhengZhou Subway System" Margin="-4,24,10,0" VerticalAlignment="Top" Height="24" FontSize="8"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
-            <Label Content="选择张数" HorizontalAlignment="Left" Margin="27,53,0,0" VerticalAlignment="Top" Grid.RowSpan="2"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
-            <Button Content="1张" HorizontalAlignment="Left" Margin="18,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑">
+            <Label Content="选择张数" HorizontalAlignment="Left" Margin="27,53,0,0" VerticalAlignment="Top" Grid.RowSpan="2"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" Height="26" Width="58"/>
+            <Button x:Name="button_Number_1"  Content="1张" HorizontalAlignment="Left" Margin="18,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -63,7 +62,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="2张" HorizontalAlignment="Left" Margin="18,45,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑">
+            <Button  x:Name="button_Number_2" Content="2张" HorizontalAlignment="Left" Margin="18,48,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -99,7 +98,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="3张" HorizontalAlignment="Left" Margin="18,73,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑">
+            <Button  x:Name="button_Number_3" Content="3张" HorizontalAlignment="Left" Margin="18,77,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -135,7 +134,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="4张" HorizontalAlignment="Left" Margin="18,100,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑">
+            <Button  x:Name="button_Number_4" Content="4张" HorizontalAlignment="Left" Margin="18,107,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -171,7 +170,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="5张" HorizontalAlignment="Left" Margin="18,127,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑">
+            <Button  x:Name="button_Number_5" Content="5张" HorizontalAlignment="Left" Margin="18,137,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -207,7 +206,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="6张" HorizontalAlignment="Left" Margin="18,154,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑">
+            <Button  x:Name="button_Number_6" Content="6张" HorizontalAlignment="Left" Margin="18,167,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -243,7 +242,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="7张" HorizontalAlignment="Left" Margin="18,181,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑">
+            <Button  x:Name="button_Number_7" Content="7张" HorizontalAlignment="Left" Margin="18,200,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -279,7 +278,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="8张" HorizontalAlignment="Left" Margin="18,207,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑">
+            <Button  x:Name="button_Number_8" Content="8张" HorizontalAlignment="Left" Margin="18,230,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -315,7 +314,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="English" Margin="18,288,40,57" Grid.Row="1" Grid.RowSpan="2"   FontFamily="微软雅黑" Click="Button_Click_3">
+            <Button Content="English" Margin="18,10,40,10" Grid.Row="2"   FontFamily="微软雅黑">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -351,7 +350,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="快捷购票" HorizontalAlignment="Left" Margin="13,288,0,57" Grid.Row="1" Width="66" Grid.Column="1" Grid.RowSpan="2"   FontFamily="微软雅黑">
+            <Button Content="快捷购票" HorizontalAlignment="Left" Margin="32,10,0,10" Grid.Row="2" Width="104" Grid.Column="2"   FontFamily="微软雅黑" Click="Button_Click_3">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -387,45 +386,9 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="取消" HorizontalAlignment="Left" Margin="54,288,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Grid.Column="2" Grid.RowSpan="2"   FontFamily="微软雅黑" Grid.ColumnSpan="2">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
-                            <Border.Background>
-                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                    <GradientStop Color="White" Offset="0.0" />
-                                    <GradientStop Color="Silver" Offset="0.5" />
-                                    <GradientStop Color="White" Offset="0.0" />
-                                </LinearGradientBrush>
-                            </Border.Background>
-                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="UIElement.IsMouseOver" Value="True">
-                                <Setter Property="Border.Background" TargetName="PART_Background">
-                                    <Setter.Value>
-                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                            <GradientStop Color="Silver" Offset="0.0" />
-                                            <GradientStop Color="White" Offset="0.5" />
-                                            <GradientStop Color="Silver" Offset="0.0" />
-                                        </LinearGradientBrush>
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                            <Trigger Property="ButtonBase.IsPressed" Value="True">
-                                <Setter Property="UIElement.Effect">
-                                    <Setter.Value>
-                                        <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <StackPanel Grid.Column="2" Height="127" VerticalAlignment="Top" Margin="13,61,8,0"  Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <StackPanel Grid.Column="2" Height="153" VerticalAlignment="Top" Margin="13,61,8,0"  Grid.RowSpan="2">
                 <Label Content="选择路线" Margin="0,0,13,0" FontWeight="Bold" RenderTransformOrigin="0.443,-0.275" HorizontalAlignment="Right" Width="70"   FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
-                <Button Content="总图" Margin="0,0,8,0" HorizontalAlignment="Right" Width="77"  FontFamily="微软雅黑" Click="Button_Click">
+                <Button Content="总图" Margin="0,0,8,0" HorizontalAlignment="Right" Width="77"  FontFamily="微软雅黑" Click="Button_Click" Height="29">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -461,7 +424,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button Content="1号线" Margin="0,10,8,0" HorizontalAlignment="Right" Width="77" FontFamily="微软雅黑" Click="Button_Click_1">
+                <Button Content="1号线" Margin="0,10,8,0" HorizontalAlignment="Right" Width="77" FontFamily="微软雅黑" Click="Button_Click_1" Height="28">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -497,7 +460,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button Content="2号线" Margin="0,13,8,0" HorizontalAlignment="Right" Width="77" FontFamily="微软雅黑" Click="Button_Click_2">
+                <Button Content="2号线" Margin="0,13,8,0" HorizontalAlignment="Right" Width="77" FontFamily="微软雅黑" Click="Button_Click_2" Height="31">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -534,7 +497,7 @@
                     </Button.Template>
                 </Button>
             </StackPanel>
-            <Button Content="返回" Grid.Column="2" Margin="37,5,3,0" VerticalAlignment="Top" FontFamily="微软雅黑" Click="Button_Click_4" Grid.ColumnSpan="2">
+            <Button Content="返回" Grid.Column="2" Margin="32,5,8,0" VerticalAlignment="Top" FontFamily="微软雅黑" Height="31">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -570,17 +533,44 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Label Content="已投入金额" Grid.Column="2" Margin="25,121,20,0" Grid.Row="1" VerticalAlignment="Top"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" Grid.ColumnSpan="2"/>
-            <Label Content="0" Grid.Column="2" HorizontalAlignment="Left" Margin="39,152,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
-            <Label Content="元" Grid.Column="2" HorizontalAlignment="Left" Margin="63,157,0,0" Grid.Row="1" VerticalAlignment="Top"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
-            <Image x:Name="image1" HorizontalAlignment="Left" Height="279" Margin="15,16,0,0" VerticalAlignment="Top" Width="336" Source="../Image/ZongLuXian.jpg" Grid.Column="1" Visibility="Visible" Grid.Row="1"/>
+            <Image x:Name="image1" HorizontalAlignment="Left" Height="279" Margin="15,16,0,0" VerticalAlignment="Top" Width="336" Source="../Image/ZongXian.jpg" Grid.Column="1" Visibility="Visible" Grid.Row="1"/>
             <Image x:Name="image2" HorizontalAlignment="Left" Height="279" Margin="15,14,0,0" VerticalAlignment="Top" Width="336" Source="../Image/XiLiuHu.jpg" Grid.Column="1" Visibility="Hidden" Grid.Row="1"/>
+            <Label x:Name="Time" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="271,25,-70,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="302" Height="25"/>
+            <!--1号线-->
+            <RadioButton x:Name="radioButton_1_1"  Grid.Column="1" HorizontalAlignment="Left" Margin="39,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="15"/>
+            <RadioButton x:Name="radioButton_1_2" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="59,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_1_3" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="80,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_1_4" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="101,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_1_5" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="122,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_1_6" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="143,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_1_7" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="164,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_1_8" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="185,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_1_9" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="205,134,0,0" Grid.Row="1" VerticalAlignment="Top"   Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_1_10" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="226,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_1_11" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="246,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_1_12" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="267,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_1_13" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="288,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_1_14" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="308,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <!--1号线-->
             <Image x:Name="image3" HorizontalAlignment="Left" Height="279" Margin="15,14,0,0" VerticalAlignment="Top" Width="336" Source="../Image/LiuZhuang.png" Grid.Column="1" Visibility="Hidden" Grid.Row="1"/>
-            <Label x:Name="Time" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="271,25,-70,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="302"/>
-            <Button Content="确定购票" HorizontalAlignment="Left" Margin="327,285,0,60" Grid.Row="1" Width="66" Grid.Column="1" Grid.RowSpan="2"   FontFamily="微软雅黑" Grid.ColumnSpan="2">
+            <RadioButton x:Name="radioButton_2_1" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="38,135,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_2" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="59,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_3" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="79,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_4" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="100,134,0,0" Grid.Row="1" VerticalAlignment="Top"  Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_5" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="121,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_6" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="142,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_7" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="162,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_8" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="183,134,0,0" Grid.Row="1" VerticalAlignment="Top"  Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_9" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="204,134,0,0" Grid.Row="1" VerticalAlignment="Top"  Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_10" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="225,134,0,0" Grid.Row="1" VerticalAlignment="Top"  Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_11" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="246,134,0,0" Grid.Row="1" VerticalAlignment="Top" Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_12" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="266,134,0,0" Grid.Row="1" VerticalAlignment="Top"  Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_13" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="288,134,0,0" Grid.Row="1" VerticalAlignment="Top"  Visibility="Hidden" Height="14" Width="19"/>
+            <RadioButton x:Name="radioButton_2_14" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="308,134,0,0" Grid.Row="1" VerticalAlignment="Top"  Visibility="Hidden" Height="14" Width="19"/>
+            <Button x:Name="button_OkToPay" Content="购           买" FontFamily="微软雅黑" FontSize="25" Foreground="#4285f4" Grid.Column="1" Margin="79,10,71,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Click="button_OkToPay_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" x:Name="PART_Background">
+                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                     <GradientStop Color="White" Offset="0.0" />
@@ -588,11 +578,11 @@
                                     <GradientStop Color="White" Offset="0.0" />
                                 </LinearGradientBrush>
                             </Border.Background>
-                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" TargetName="PART_Background">
+                            <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                <Setter Property="Border.Background" TargetName="PART_Background">
                                     <Setter.Value>
                                         <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                             <GradientStop Color="Silver" Offset="0.0" />
@@ -602,8 +592,8 @@
                                     </Setter.Value>
                                 </Setter>
                             </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Effect">
+                            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                <Setter Property="UIElement.Effect">
                                     <Setter.Value>
                                         <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
                                     </Setter.Value>
@@ -613,7 +603,6 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
         </Grid>
     </Viewbox>
 </Window>

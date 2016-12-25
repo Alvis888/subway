@@ -5,8 +5,108 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:subway.Home"
         mc:Ignorable="d"
-        Title="Home_ticketInfo" Height="300" Width="300">
-    <Grid>
-        <Label Content="购票信息"/>
-    </Grid>
+        Title="Home_ticketInfo" Height="477.778" Width="643.055"  WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="../Image/Nipic_13154091_20150814163659003000.jpg"/>
+    </Window.Background>
+    <!--<Window.Background>
+        <ImageBrush ImageSource="../Image/login_bg.jpg"/>
+    </Window.Background>-->
+    <Viewbox Margin="0,0,2,-10" >
+        <Grid Margin="0,0,2,3" Height="208" Width="279" >
+            <Label x:Name="label2" Content="购票信息" HorizontalAlignment="Left" Margin="73,2,0,0" VerticalAlignment="Top" FontFamily="微软雅黑" Foreground="Gray" FontSize="25px"  HorizontalContentAlignment="Center" />
+            <Label x:Name="label_start" Content="出发地:" HorizontalAlignment="Left" Margin="32,43,0,0" VerticalAlignment="Top" Foreground="White"/>
+            <Label x:Name="label_end" Content="目的地:" HorizontalAlignment="Left" Margin="32,73,0,0" VerticalAlignment="Top" Foreground="White"/>
+            <TextBox x:Name="textBox_departure" IsReadOnly="True" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+            <TextBox x:Name="textBox_destination" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+            <Label x:Name="label" Content="数    量" HorizontalAlignment="Left" Margin="32,98,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.031,0.46" Foreground="White"/>
+            <ComboBox x:Name="comboBox_ticketNumber" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,101,0,0"  VerticalAlignment="Top" Width="125" SelectionChanged="comboBox_newSex_SelectionChanged">
+                <ComboBoxItem>1</ComboBoxItem>
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+                <ComboBoxItem>6</ComboBoxItem>
+                <ComboBoxItem>7</ComboBoxItem>
+                <ComboBoxItem>8</ComboBoxItem>
+                <ComboBoxItem>9</ComboBoxItem>
+                <ComboBoxItem>10</ComboBoxItem>
+            </ComboBox>
+            <Label x:Name="label1" Content="总   价：" HorizontalAlignment="Left" Margin="32,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.766,0.606" Foreground="White"/>
+            <TextBox x:Name="textBox_Sum" IsReadOnly="True" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+
+            <Button x:Name="Button_giveMoney" Content="付款" HorizontalAlignment="Left" Margin="32,166,0,0" VerticalAlignment="Top" Width="75" Height="25" Opacity="0.7" Click="Button_giveMoney_Click" >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="Silver" Offset="0.5" />
+                                    <GradientStop Color="White" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                <Setter Property="Border.Background" TargetName="PART_Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="Silver" Offset="0.0" />
+                                            <GradientStop Color="White" Offset="0.5" />
+                                            <GradientStop Color="Silver" Offset="0.0" />
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                <Setter Property="UIElement.Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="Button_cancelGiveMoney" Content="取消" HorizontalAlignment="Left" Margin="156,166,0,0" VerticalAlignment="Top" Width="75" Height="25" Opacity="0.7" Click="Button_cancelGiveMoney_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="Silver" Offset="0.5" />
+                                    <GradientStop Color="White" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                <Setter Property="Border.Background" TargetName="PART_Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="Silver" Offset="0.0" />
+                                            <GradientStop Color="White" Offset="0.5" />
+                                            <GradientStop Color="Silver" Offset="0.0" />
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                <Setter Property="UIElement.Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+    </Viewbox>
 </Window>

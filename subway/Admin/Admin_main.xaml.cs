@@ -1,4 +1,5 @@
 ﻿using MainChoose;
+using subway.Home;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,11 @@ namespace subway.Admin
     public partial class admin_main : Window
     {
         private DispatcherTimer ShowTimer;
+        int ticketNumber = 0;
+        int stationNumber = 0;
+        string destination = "";
+        string[] lineOne = { "西流湖", "西三环", "秦岭路", "桐柏路", "碧沙路", "绿城广场", "医学院", "郑州火车站", "二七广场","人民路", "紫荆路", "燕庄", "民航路", "会展中心" };
+        string[] lineTwo = { "刘庄", "柳林", "沙门", "北三环", "东风路", "关虎路", "黄河路", "紫荆山", "东大街", "陇海东路", "二里岗", "南五里堡", "花寨", "南三环" };
         public admin_main()
         {
             InitializeComponent();
@@ -39,8 +45,230 @@ namespace subway.Admin
             ShowTimer.Interval = new TimeSpan(0, 0, 0, 1, 0);
             ShowTimer.Start();
 
-           
+            //点击1号线站点
+            radioButton_1_1.Checked += RadioButton_Checked;
+            radioButton_1_2.Checked += RadioButton_Checked;
+            radioButton_1_3.Checked += RadioButton_Checked;
+            radioButton_1_4.Checked += RadioButton_Checked;
+            radioButton_1_5.Checked += RadioButton_Checked;
+            radioButton_1_6.Checked += RadioButton_Checked;
+            radioButton_1_7.Checked += RadioButton_Checked;
+            radioButton_1_8.Checked += RadioButton_Checked;
+            radioButton_1_9.Checked += RadioButton_Checked;
+            radioButton_1_10.Checked += RadioButton_Checked;
+            radioButton_1_11.Checked += RadioButton_Checked;
+            radioButton_1_12.Checked += RadioButton_Checked;
+            radioButton_1_13.Checked += RadioButton_Checked;
+            radioButton_1_14.Checked += RadioButton_Checked;
+
+            //点击2号线站点
+            radioButton_2_1.Checked += RadioButton_Checked;
+            radioButton_2_2.Checked += RadioButton_Checked;
+            radioButton_2_2.Checked += RadioButton_Checked;
+            radioButton_2_3.Checked += RadioButton_Checked;
+            radioButton_2_4.Checked += RadioButton_Checked;
+            radioButton_2_5.Checked += RadioButton_Checked;
+            radioButton_2_6.Checked += RadioButton_Checked;
+            radioButton_2_7.Checked += RadioButton_Checked;
+            radioButton_2_8.Checked += RadioButton_Checked;
+            radioButton_2_9.Checked += RadioButton_Checked;
+            radioButton_2_10.Checked += RadioButton_Checked;
+            radioButton_2_11.Checked += RadioButton_Checked;
+            radioButton_2_12.Checked += RadioButton_Checked;
+            radioButton_2_13.Checked += RadioButton_Checked;
+            radioButton_2_14.Checked += RadioButton_Checked;
+
+            //点击购买票数
+            button_Number_1.Click += Button_Number_Click;
+            button_Number_2.Click += Button_Number_Click;
+            button_Number_3.Click += Button_Number_Click;
+            button_Number_4.Click += Button_Number_Click;
+            button_Number_5.Click += Button_Number_Click;
+            button_Number_6.Click += Button_Number_Click;
+            button_Number_7.Click += Button_Number_Click;
+            button_Number_8.Click += Button_Number_Click;
         }
+        /// <summary>
+        /// 点击站点
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>  
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton btn = sender as RadioButton;
+            
+            switch (btn.Name.ToString())
+            {
+                case "radioButton_1_1":
+                    destination = lineOne[0];
+                    stationNumber = 8;
+                   // stationNumber=
+                    break;
+                case "radioButton_1_2":
+                    destination = lineOne[1];
+                    stationNumber = 7;
+                    break;
+                case "radioButton_1_3":
+                    destination = lineOne[2];
+                    stationNumber = 6;
+                    break;
+                case "radioButton_1_4":
+                    destination = lineOne[3];
+                    stationNumber = 8;
+                    break;
+                case "radioButton_1_5":
+                    destination = lineOne[4];
+                    stationNumber = 4;
+                    break;
+                case "radioButton_1_6":
+                    destination = lineOne[5];
+                    stationNumber = 3;
+                    break;
+                case "radioButton_1_7":
+                    destination = lineOne[6];
+                    stationNumber = 2;
+                    break;
+                case "radioButton_1_8":
+                    destination = lineOne[7];
+                    stationNumber = 1;
+                    break;
+                case "radioButton_1_9":
+                    destination = lineOne[8];
+                    stationNumber = 0;
+                    break;
+                case "radioButton_1_10":
+                    destination = lineOne[9];
+                    stationNumber = 1;
+                    break;
+                case "radioButton_1_11":
+                    destination = lineOne[10];
+                    stationNumber = 2;
+                    break;
+                case "radioButton_1_12":
+                    destination = lineOne[11];
+                    stationNumber = 3;
+                    break;
+                case "radioButton_1_13":
+                    destination = lineOne[12];
+                    stationNumber = 4;
+                    break;
+                case "radioButton_1_14":
+                    destination = lineOne[13];
+                    stationNumber = 5;
+                    break;
+
+
+
+
+
+
+                case "radioButton_2_1":
+                    destination = lineTwo[0];
+                    stationNumber = 9;
+                    break;
+                case "radioButton_2_2":
+                    destination = lineTwo[1];
+                    stationNumber = 8;
+                    break;
+                case "radioButton_2_3":
+                    destination = lineTwo[2];
+                    stationNumber = 7;
+                    break;
+                case "radioButton_2_4":
+                    destination = lineTwo[3];
+                    stationNumber = 6;
+                    break;
+                case "radioButton_2_5":
+                    destination = lineTwo[4];
+                    stationNumber = 5;
+                    break;
+                case "radioButton_2_6":
+                    destination = lineTwo[5];
+                    stationNumber = 4;
+                    break;
+                case "radioButton_2_7":
+                    destination = lineTwo[6];
+                    stationNumber = 3;
+                    break;
+                case "radioButton_2_8":
+                    destination = lineTwo[7];
+                    stationNumber = 2;
+                    break;
+                case "radioButton_2_9":
+                    destination = lineTwo[8];
+                    stationNumber = 3;
+                    break;
+                case "radioButton_2_10":
+                    destination = lineTwo[9];
+                    stationNumber = 4;
+                    break;
+                case "radioButton_2_11":
+                    destination = lineTwo[10];
+                    stationNumber = 5;
+                    break;
+                case "radioButton_2_12":
+                    destination = lineTwo[11];
+                    stationNumber = 6;
+                    break;
+                case "radioButton_2_13":
+                    destination = lineTwo[12];
+                    stationNumber = 7;
+                    break;
+                case "radioButton_2_14":
+                    destination = lineTwo[13];
+                    stationNumber = 8;
+                    break;
+
+            }
+        }
+
+        /// <summary>
+        /// 点击购买票数
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Number_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            switch (btn.Name.ToString())
+            {
+                case "button_Number_1":
+                    ticketNumber = 1;
+                    break;
+                case "button_Number_2":
+                    ticketNumber = 2;
+                    break;
+                case "button_Number_3":
+                    ticketNumber = 3;
+                    break;
+                case "button_Number_4":
+                    ticketNumber = 4;
+                    break;
+                case "button_Number_5":
+                    ticketNumber = 5;
+                    break;
+                case "button_Number_6":
+                    ticketNumber = 6;
+                    break;
+                case "button_Number_7":
+                    ticketNumber = 7;
+                    break;
+                case "button_Number_8":
+                    ticketNumber = 8;
+                    break;
+                
+
+            }
+            //if (btn.IsChecked == true)
+            //{
+            //    //btn.Background = new SolidColorBrush(Colors.Red);
+            //}
+            //else
+            //{
+            //    //btn.Background = new SolidColorBrush(Colors.White);
+            //}
+        }
+
         public void ShowCurTimer(object sender, EventArgs e)
         {
             //"星期"+DateTime.Now.DayOfWeek.ToString(("d"))
@@ -52,40 +280,190 @@ namespace subway.Admin
             this.Time.Content += DateTime.Now.ToString("yyyy年MM月dd日");   //yyyy年MM月dd日
             this.Time.Content += " ";
             //获得时分秒
-            this.Time.Content += DateTime.Now.ToString("HH:mm:ss:ms");
+            this.Time.Content += DateTime.Now.ToString("HH:mm:ss");
             //System.Diagnostics.Debug.Print("this.ShowCurrentTime {0}", this.ShowCurrentTime);
         }
 
+
+        /// <summary>
+        /// 点击总图
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             image1.Visibility = Visibility.Visible;
             image2.Visibility = Visibility.Hidden;
             image3.Visibility = Visibility.Hidden;
-        }
 
+
+            radioButton_2_1.Visibility = Visibility.Hidden;
+            radioButton_2_2.Visibility = Visibility.Hidden;
+            radioButton_2_2.Visibility = Visibility.Hidden;
+            radioButton_2_3.Visibility = Visibility.Hidden;
+            radioButton_2_4.Visibility = Visibility.Hidden;
+            radioButton_2_5.Visibility = Visibility.Hidden;
+            radioButton_2_6.Visibility = Visibility.Hidden;
+            radioButton_2_7.Visibility = Visibility.Hidden;
+            radioButton_2_8.Visibility = Visibility.Hidden;
+            radioButton_2_9.Visibility = Visibility.Hidden;
+            radioButton_2_10.Visibility = Visibility.Hidden;
+            radioButton_2_11.Visibility = Visibility.Hidden;
+            radioButton_2_12.Visibility = Visibility.Hidden;
+            radioButton_2_13.Visibility = Visibility.Hidden;
+            radioButton_2_14.Visibility = Visibility.Hidden;
+
+            radioButton_1_1.Visibility = Visibility.Hidden;
+            radioButton_1_2.Visibility = Visibility.Hidden;
+            radioButton_1_2.Visibility = Visibility.Hidden;
+            radioButton_1_3.Visibility = Visibility.Hidden;
+            radioButton_1_4.Visibility = Visibility.Hidden;
+            radioButton_1_5.Visibility = Visibility.Hidden;
+            radioButton_1_6.Visibility = Visibility.Hidden;
+            radioButton_1_7.Visibility = Visibility.Hidden;
+            radioButton_1_8.Visibility = Visibility.Hidden;
+            radioButton_1_9.Visibility = Visibility.Hidden;
+            radioButton_1_10.Visibility = Visibility.Hidden;
+            radioButton_1_11.Visibility = Visibility.Hidden;
+            radioButton_1_12.Visibility = Visibility.Hidden;
+            radioButton_1_13.Visibility = Visibility.Hidden;
+            radioButton_1_14.Visibility = Visibility.Hidden;
+        }
+        /// <summary>
+        /// 点击1号线
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             image1.Visibility = Visibility.Hidden;
             image2.Visibility = Visibility.Visible;
             image3.Visibility = Visibility.Hidden;
-        }
+            radioButton_1_1.Visibility = Visibility.Visible;
+            radioButton_1_2.Visibility = Visibility.Visible;
+            radioButton_1_2.Visibility = Visibility.Visible;
+            radioButton_1_3.Visibility = Visibility.Visible;
+            radioButton_1_4.Visibility = Visibility.Visible;
+            radioButton_1_5.Visibility = Visibility.Visible;
+            radioButton_1_6.Visibility = Visibility.Visible;
+            radioButton_1_7.Visibility = Visibility.Visible;
+            radioButton_1_8.Visibility = Visibility.Visible;
+            radioButton_1_9.Visibility = Visibility.Visible;
+            radioButton_1_10.Visibility = Visibility.Visible;
+            radioButton_1_11.Visibility = Visibility.Visible;
+            radioButton_1_12.Visibility = Visibility.Visible;
+            radioButton_1_13.Visibility = Visibility.Visible;
+            radioButton_1_14.Visibility = Visibility.Visible;
 
+            radioButton_2_1.Visibility = Visibility.Hidden;
+            radioButton_2_2.Visibility = Visibility.Hidden;
+            radioButton_2_2.Visibility = Visibility.Hidden;
+            radioButton_2_3.Visibility = Visibility.Hidden;
+            radioButton_2_4.Visibility = Visibility.Hidden;
+            radioButton_2_5.Visibility = Visibility.Hidden;
+            radioButton_2_6.Visibility = Visibility.Hidden;
+            radioButton_2_7.Visibility = Visibility.Hidden;
+            radioButton_2_8.Visibility = Visibility.Hidden;
+            radioButton_2_9.Visibility = Visibility.Hidden;
+            radioButton_2_10.Visibility = Visibility.Hidden;
+            radioButton_2_11.Visibility = Visibility.Hidden;
+            radioButton_2_12.Visibility = Visibility.Hidden;
+            radioButton_2_13.Visibility = Visibility.Hidden;
+            radioButton_2_14.Visibility = Visibility.Hidden;
+
+
+            radioButton_2_1.IsChecked=false;
+            radioButton_2_2.IsChecked = false;
+            radioButton_2_2.IsChecked = false;
+            radioButton_2_3.IsChecked = false;
+            radioButton_2_4.IsChecked = false;
+            radioButton_2_5.IsChecked = false;
+            radioButton_2_6.IsChecked = false;
+            radioButton_2_7.IsChecked = false;
+            radioButton_2_8.IsChecked = false;
+            radioButton_2_9.IsChecked = false;
+            radioButton_2_10.IsChecked = false;
+            radioButton_2_11.IsChecked = false;
+            radioButton_2_12.IsChecked = false;
+            radioButton_2_13.IsChecked = false;
+            radioButton_2_14.IsChecked = false;
+        }
+        /// <summary>
+        /// 点击2号线
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             image1.Visibility = Visibility.Hidden;
             image2.Visibility = Visibility.Hidden;
             image3.Visibility = Visibility.Visible;
+            radioButton_2_1.Visibility = Visibility.Visible;
+            radioButton_2_2.Visibility = Visibility.Visible;
+            radioButton_2_2.Visibility = Visibility.Visible;
+            radioButton_2_3.Visibility = Visibility.Visible;
+            radioButton_2_4.Visibility = Visibility.Visible;
+            radioButton_2_5.Visibility = Visibility.Visible;
+            radioButton_2_6.Visibility = Visibility.Visible;
+            radioButton_2_7.Visibility = Visibility.Visible;
+            radioButton_2_8.Visibility = Visibility.Visible;
+            radioButton_2_9.Visibility = Visibility.Visible;
+            radioButton_2_10.Visibility = Visibility.Visible;
+            radioButton_2_11.Visibility = Visibility.Visible;
+            radioButton_2_12.Visibility = Visibility.Visible;
+            radioButton_2_13.Visibility = Visibility.Visible;
+            radioButton_2_14.Visibility = Visibility.Visible;
+
+            radioButton_1_1.Visibility = Visibility.Hidden;
+            radioButton_1_2.Visibility = Visibility.Hidden;
+            radioButton_1_2.Visibility = Visibility.Hidden;
+            radioButton_1_3.Visibility = Visibility.Hidden;
+            radioButton_1_4.Visibility = Visibility.Hidden;
+            radioButton_1_5.Visibility = Visibility.Hidden;
+            radioButton_1_6.Visibility = Visibility.Hidden;
+            radioButton_1_7.Visibility = Visibility.Hidden;
+            radioButton_1_8.Visibility = Visibility.Hidden;
+            radioButton_1_9.Visibility = Visibility.Hidden;
+            radioButton_1_10.Visibility = Visibility.Hidden;
+            radioButton_1_11.Visibility = Visibility.Hidden;
+            radioButton_1_12.Visibility = Visibility.Hidden;
+            radioButton_1_13.Visibility = Visibility.Hidden;
+            radioButton_1_14.Visibility = Visibility.Hidden;
+
+            radioButton_1_1.IsChecked = false;
+            radioButton_1_2.IsChecked = false;
+            radioButton_1_2.IsChecked = false;
+            radioButton_1_3.IsChecked = false;
+            radioButton_1_4.IsChecked = false;
+            radioButton_1_5.IsChecked = false;
+            radioButton_1_6.IsChecked = false;
+            radioButton_1_7.IsChecked = false;
+            radioButton_1_8.IsChecked = false;
+            radioButton_1_9.IsChecked = false;
+            radioButton_1_10.IsChecked = false;
+            radioButton_1_11.IsChecked = false;
+            radioButton_1_12.IsChecked = false;
+            radioButton_1_13.IsChecked = false;
+            radioButton_1_14.IsChecked = false;
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            EnglishAdmin_main choose = new EnglishAdmin_main();
-            choose.ShowDialog();
+            Home_fasttickets fastTicket = new Home_fasttickets();
+            fastTicket.Show();
         }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// 点击购买按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_OkToPay_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Home_ticketInfo ticketInfo = new Home_ticketInfo(destination,ticketNumber, stationNumber,0);
+            //MessageBox.Show(destination);
+            //MessageBox.Show(ticketNumber.ToString());
+            //MessageBox.Show(stationNumber.ToString());
+            ticketInfo.Show();
         }
     }
 }

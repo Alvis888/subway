@@ -1,0 +1,8 @@
+﻿<Window x:Class="subway.付款失败"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="付款失败" Height="300" Width="300">
+    <Grid>
+        <Label Content="金额不足&#13;出票失败&#13;正在返回..." HorizontalAlignment="Left" Margin="47,60,0,0" VerticalAlignment="Top" Height="148" Width="203" FontSize="20"/>
+    </Grid>
+</Window>

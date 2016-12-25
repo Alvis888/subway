@@ -29,28 +29,12 @@ namespace MainChoose
             double y1 = SystemParameters.PrimaryScreenHeight;//得到屏幕整体高度
             this.Width = x1;//设置窗体宽度
             this.Height = y1;//设置窗体高度
+
+           
+
+
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-            image1.Visibility = Visibility.Visible;
-            image2.Visibility = Visibility.Hidden;
-            image3.Visibility = Visibility.Hidden;
-        }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            image1.Visibility = Visibility.Hidden;
-            image2.Visibility = Visibility.Visible;
-            image3.Visibility = Visibility.Hidden;
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            image1.Visibility = Visibility.Hidden;
-            image2.Visibility = Visibility.Hidden;
-            image3.Visibility = Visibility.Visible;
-        }
     }
 }

@@ -233,27 +233,161 @@ namespace subway.Admin
             switch (btn.Name.ToString())
             {
                 case "button_Number_1":
+                    btn.Content = "选中 1";
+                    btn.Foreground = new SolidColorBrush(Colors.Blue); 
+                    button_Number_2.Content = "2张";
+                    button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_3.Content = "3张";
+                    button_Number_3.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_4.Content = "4张";
+                    button_Number_4.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_5.Content = "5张";
+                    button_Number_5.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_6.Content = "6张";
+                    button_Number_6.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_7.Content = "7张";
+                    button_Number_7.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_8.Content = "8张";
+                    button_Number_8.Foreground = new SolidColorBrush(Colors.Black);
+
                     ticketNumber = 1;
                     break;
                 case "button_Number_2":
+                    btn.Content = "选中 2";
+                    btn.Foreground = new SolidColorBrush(Colors.Blue);
+                    button_Number_1.Content = "1张";
+                    button_Number_1.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_3.Content = "3张";
+                    button_Number_3.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_4.Content = "4张";
+                    button_Number_4.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_5.Content = "5张";
+                    button_Number_5.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_6.Content = "6张";
+                    button_Number_6.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_7.Content = "7张";
+                    button_Number_7.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_8.Content = "8张";
+                    button_Number_8.Foreground = new SolidColorBrush(Colors.Black);
                     ticketNumber = 2;
                     break;
                 case "button_Number_3":
+                    btn.Content = "选中 3";
+                    btn.Foreground = new SolidColorBrush(Colors.Blue);
+                    button_Number_2.Content = "2张";
+                    button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_1.Content = "1张";
+                    button_Number_1.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_4.Content = "4张";
+                    button_Number_4.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_5.Content = "5张";
+                    button_Number_5.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_6.Content = "6张";
+                    button_Number_6.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_7.Content = "7张";
+                    button_Number_7.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_8.Content = "8张";
+                    button_Number_8.Foreground = new SolidColorBrush(Colors.Black);
                     ticketNumber = 3;
                     break;
                 case "button_Number_4":
+
+                    btn.Content = "选中 4";
+                    btn.Foreground = new SolidColorBrush(Colors.Blue);
+                    button_Number_2.Content = "2张";
+                    button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_3.Content = "3张";
+                    button_Number_3.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_1.Content = "1张";
+                    button_Number_1.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_5.Content = "5张";
+                    button_Number_5.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_6.Content = "6张";
+                    button_Number_6.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_7.Content = "7张";
+                    button_Number_7.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_8.Content = "8张";
+                    button_Number_8.Foreground = new SolidColorBrush(Colors.Black);
                     ticketNumber = 4;
                     break;
                 case "button_Number_5":
+
+                    btn.Content = "选中 5";
+                    btn.Foreground = new SolidColorBrush(Colors.Blue);
+                    button_Number_2.Content = "2张";
+                    button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_3.Content = "3张";
+                    button_Number_3.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_4.Content = "4张";
+                    button_Number_4.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_1.Content = "1张";
+                    button_Number_1.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_6.Content = "6张";
+                    button_Number_6.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_7.Content = "7张";
+                    button_Number_7.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_8.Content = "8张";
+                    button_Number_8.Foreground = new SolidColorBrush(Colors.Black);
                     ticketNumber = 5;
                     break;
                 case "button_Number_6":
+
+                    btn.Content = "选中 6";
+                    btn.Foreground = new SolidColorBrush(Colors.Blue);
+                    button_Number_2.Content = "2张";
+                    button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_3.Content = "3张";
+                    button_Number_3.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_4.Content = "4张";
+                    button_Number_4.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_5.Content = "5张";
+                    button_Number_5.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_1.Content = "1张";
+                    button_Number_1.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_7.Content = "7张";
+                    button_Number_7.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_8.Content = "8张";
+                    button_Number_8.Foreground = new SolidColorBrush(Colors.Black);
                     ticketNumber = 6;
                     break;
                 case "button_Number_7":
+
+                    btn.Content = "选中 7";
+                    btn.Foreground = new SolidColorBrush(Colors.Blue);
+                    button_Number_2.Content = "2张";
+                    button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_3.Content = "3张";
+                    button_Number_3.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_4.Content = "4张";
+                    button_Number_4.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_5.Content = "5张";
+                    button_Number_5.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_6.Content = "6张";
+                    button_Number_6.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_1.Content = "1张";
+                    button_Number_1.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_8.Content = "8张";
+                    button_Number_8.Foreground = new SolidColorBrush(Colors.Black);
                     ticketNumber = 7;
                     break;
                 case "button_Number_8":
+
+                    btn.Content = "选中 8";
+                    btn.Foreground = new SolidColorBrush(Colors.Blue);
+                    button_Number_2.Content = "2张";
+                    button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_3.Content = "3张";
+                    button_Number_3.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_4.Content = "4张";
+                    button_Number_4.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_5.Content = "5张";
+                    button_Number_5.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_6.Content = "6张";
+                    button_Number_6.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_7.Content = "7张";
+                    button_Number_7.Foreground = new SolidColorBrush(Colors.Black);
+                    button_Number_1.Content = "1张";
+                    button_Number_1.Foreground = new SolidColorBrush(Colors.Black);
                     ticketNumber = 8;
                     break;
                 
@@ -269,6 +403,11 @@ namespace subway.Admin
             //}
         }
 
+        /// <summary>
+        /// 显示当前日期
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ShowCurTimer(object sender, EventArgs e)
         {
             //"星期"+DateTime.Now.DayOfWeek.ToString(("d"))

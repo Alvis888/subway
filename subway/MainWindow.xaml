@@ -16,9 +16,9 @@
             </Grid.Background>-->
 
             <Label x:Name="label" Content="Login" Foreground="White" Margin="122,43,136,0" VerticalAlignment="Top" FontFamily="微软雅黑" FontSize="45px"  HorizontalContentAlignment="Center" />
-            <TextBox x:Name="textBox_username" Margin="374,163,382,380" TextWrapping="Wrap" Text="username"  Opacity="0.5"  FontFamily="微软雅黑" FontSize="25px" />
-            <PasswordBox x:Name="passwordBox_password" Password="********" Margin="374,232,382,314"    Opacity="0.5" FontFamily="微软雅黑" FontSize="25px" ToolTip="please  input your password"/>
-            <Button x:Name="button" IsDefault="True" Content="OK" HorizontalAlignment="Left" Margin="546,349,0,0" VerticalAlignment="Top" Width="94" Height="41" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" Click="button_Click" >
+            <TextBox x:Name="textBox_username" Margin="374,163,382,380" TextWrapping="Wrap" Text="username"  Opacity="0.5"  FontFamily="微软雅黑" FontSize="25px" ToolTip="请输入用户名" />
+            <PasswordBox x:Name="passwordBox_password" Password="********" Margin="374,232,382,314"    Opacity="0.5" FontFamily="微软雅黑" FontSize="25px" ToolTip="请输入密码"/>
+            <Button x:Name="button" IsDefault="True" Content="登陆" HorizontalAlignment="Left" Margin="546,349,0,0" VerticalAlignment="Top" Width="94" Height="41" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" Click="button_Click" >
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -54,7 +54,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="button1" IsCancel="True" Content="Cancel" HorizontalAlignment="Left" Margin="374,349,0,0" VerticalAlignment="Top" Width="94" Height="41" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" Click="button1_Click" RenderTransformOrigin="0.553,1.355" >
+            <Button x:Name="button1" IsCancel="True" Content="取消" HorizontalAlignment="Left" Margin="374,349,0,0" VerticalAlignment="Top" Width="94" Height="41" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" Click="button1_Click" RenderTransformOrigin="0.553,1.355" >
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">

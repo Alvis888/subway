@@ -5,8 +5,397 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:subway.Admin"
         mc:Ignorable="d"
-        Title="Admin_deleteUser" Height="300" Width="300">
-    <Grid>
-        <Label Content="销户"/>
-    </Grid>
+        
+        Title="chooseOpen" Margin="0" Height="418.636" Width="503.565" WindowState="Maximized">
+    <Window.Background>
+        <SolidColorBrush Color="#f1f1f1"/>
+    </Window.Background>
+    <Viewbox Margin="0,0,2,-4" >
+        <Grid Height="525" Width="670" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="129*"/>
+                <ColumnDefinition Width="382*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="29*"/>
+                <RowDefinition Height="339*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.ColumnSpan="2" Height="37" Margin="-285,0,-370,0" VerticalAlignment="Top"  Background="#4285F4" HorizontalAlignment="Right" Width="1325">
+                <Grid Width="272">
+                    <Label Content="郑       州       地       铁       站" HorizontalContentAlignment="Center" Margin="514,2,-514,-2" FontFamily="微软雅黑" Foreground="White" FontStretch="Normal" FontWeight="Bold" FontSize="15"/>
+                 <Button x:Name="button_back" Margin="1016,3,-802,-3" Content="返回" Foreground="White" FontWeight="Bold" Click="button_back_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="SkyBlue" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                        <Setter Property="Border.Background" TargetName="PART_Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                    <GradientStop Color="Red" Offset="0.0" />
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                        <Setter Property="UIElement.Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </TextBlock>
+            <Border CornerRadius="20" Background="White" BorderBrush="White" BorderThickness="1" HorizontalAlignment="Left" Height="464" Margin="0,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="159">
+                <Grid>
+                    <Button x:Name="button_charge" Margin="25,43,20,288"  Content="充值" Height="39" Foreground="White" FontWeight="Bold">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="DeepSkyBlue" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                        <Setter Property="Border.Background" TargetName="PART_Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                    <GradientStop Color="LightBlue" Offset="0.0" />
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                        <Setter Property="UIElement.Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="button_open" Margin="25,162,20,165" Content="开户" Height="43" Foreground="White" FontWeight="Bold">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="DeepSkyBlue" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                        <Setter Property="Border.Background" TargetName="PART_Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                    <GradientStop Color="LightBlue" Offset="0.0" />
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                        <Setter Property="UIElement.Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="button_delete" Margin="25,272,20,61" Content="销户" Height="37" Foreground="White" FontWeight="Bold">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="DeepSkyBlue" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                        <Setter Property="Border.Background" TargetName="PART_Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                    <GradientStop Color="LightBlue" Offset="0.0" />
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                        <Setter Property="UIElement.Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border x:Name="border_open" Visibility="Hidden" CornerRadius="20" Background="White" BorderBrush="White" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="464" Margin="5,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="486">
+                <Grid >
+                    <Label Content="姓   名：" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" Margin="132,72,0,0"/>
+                    <TextBox x:Name="textBox_newName" HorizontalAlignment="Left" Height="23" Margin="219,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182"/>
+                    <Label Content="手   机：" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" Margin="132,110,0,0" RenderTransformOrigin="0.5,0.5"></Label>
+                    <TextBox x:Name="textBox_newPhone" HorizontalAlignment="Left" Height="23" Margin="219,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="182" />
+                    <Label x:Name="label_newSex" Content="性   别：" HorizontalAlignment="Left" Margin="132,195,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label_newPassword" Content="密   码：" HorizontalAlignment="Left" Margin="132,156,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label_email" Content="邮   箱：" HorizontalAlignment="Left" Margin="132,235,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label_newMOney" Content="金   额：" HorizontalAlignment="Left" Margin="132,276,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+
+                    <TextBox x:Name="textBox_newPassword" HorizontalAlignment="Left" Height="23" Margin="219,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" TextChanged="textBox_newPassword_TextChanged" />
+                    <TextBox x:Name="textBox_newEmail" HorizontalAlignment="Left" Height="23" Margin="219,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+                    <TextBox x:Name="textBox_newMoney" HorizontalAlignment="Left" Height="23" Margin="219,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" RenderTransformOrigin="0.5,0.5">
+                    </TextBox>
+                    <ComboBox x:Name="comboBox_newSex" HorizontalAlignment="Left" Height="23" Margin="219,197,0,0"  VerticalAlignment="Top" Width="182">
+                        <ComboBoxItem>男</ComboBoxItem>
+                        <ComboBoxItem>女</ComboBoxItem>
+                        <ComboBoxItem>其他</ComboBoxItem>
+                    </ComboBox>
+                    <Button  x:Name="button_newCancel" Foreground="White" Content="取消" HorizontalAlignment="Left" Height="33" Margin="132,323,0,0" VerticalAlignment="Top" Width="87" RenderTransformOrigin="0.551,0.502" FontWeight="Bold" Click="button_newCancel_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="DeepSkyBlue" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                        <Setter Property="Border.Background" TargetName="PART_Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                    <GradientStop Color="LightBlue" Offset="0.0" />
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                        <Setter Property="UIElement.Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="button_newOK" Foreground="White" Content="确定" HorizontalAlignment="Left" Height="33" Margin="314,323,0,0" VerticalAlignment="Top" Width="87" FontWeight="Bold" Click="button_newOK_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="DeepSkyBlue" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                        <Setter Property="Border.Background" TargetName="PART_Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                    <GradientStop Color="LightBlue" Offset="0.0" />
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                        <Setter Property="UIElement.Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border x:Name="border_charge" Visibility="Hidden" CornerRadius="20" Background="White" BorderBrush="White" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="464" Margin="5,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="486">
+                <Grid>
+                    <Label Content="手   机：" HorizontalAlignment="Left" Margin="118,104,0,0" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.5,-0.221"/>
+                    <TextBox x:Name="textbox_chargePhone" HorizontalAlignment="Left" Height="23" Margin="199,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="136"/>
+                    <Label Content="密   码：" HorizontalAlignment="Left" Margin="117,158,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBox  x:Name="textbox_chargePassword" HorizontalAlignment="Left" Height="23" Margin="199,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="136" TextChanged="textbox_chargePassword_TextChanged"/>
+                    <Label x:Name="label" FontWeight="Bold" Content="余   额：" HorizontalAlignment="Left" Margin="119,214,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.473,-0.206"/>
+                    <TextBox  x:Name="textbox_chargeRemainingMoney" HorizontalAlignment="Left" Height="23" Margin="199,214,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="136" IsReadOnly="True"/>
+                    <Label Content="充值数额：" HorizontalAlignment="Left" Margin="117,270,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBox x:Name="textbox_chargeNumber" HorizontalAlignment="Left" Height="23" Margin="199,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" TextChanged="textbox_chargeNumber_TextChanged" />
+                    <Button  x:Name="buttonChargeOK" Foreground="White"  Content="确定" HorizontalAlignment="Left" Height="34" Margin="255,329,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold" Click="buttonChargeOK_Click" >
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="DeepSkyBlue" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                        <Setter Property="Border.Background" TargetName="PART_Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                    <GradientStop Color="LightBlue" Offset="0.0" />
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                        <Setter Property="UIElement.Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button  x:Name="buttonChargeCanel" Content="取消" Foreground="White" HorizontalAlignment="Left" Height="34" Margin="118,329,0,0" VerticalAlignment="Top" Width="88" FontWeight="Bold" Click="buttonChargeCanel_Click"  >
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="DeepSkyBlue" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                        <Setter Property="Border.Background" TargetName="PART_Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                    <GradientStop Color="LightBlue" Offset="0.0" />
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                        <Setter Property="UIElement.Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Border>
+
+            <Border x:Name="border_delete" Visibility="Visible" CornerRadius="20" Background="White" BorderBrush="White" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="464" Margin="5,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="486">
+                <Grid>
+                    <Label Content="手   机：" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.5,-0.221" Margin="155,109,0,0"/>
+                    <Label x:Name="label1" Content="密   码：" HorizontalAlignment="Left" Margin="155,171,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <Label x:Name="label2" Content="余   额：" HorizontalAlignment="Left" Margin="155,231,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBox x:Name="textBox_deletePhone" HorizontalAlignment="Left" Height="23" Margin="231,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" />
+                    <TextBox x:Name="textBox_deletePassword" HorizontalAlignment="Left" Height="23" Margin="231,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" TextChanged="textBox_deletePassword_TextChanged"/>
+                    <TextBox x:Name="textBox_deleteMoney" IsReadOnly="True"  HorizontalAlignment="Left" Height="23" Margin="231,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155"/>
+                    <Button x:Name="button_delete_OK" Foreground="White" Content="确定" HorizontalAlignment="Left" Margin="311,296,0,0" FontWeight="Bold" VerticalAlignment="Top" Width="75" Height="32" Click="button_delete_OK_Click" >
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="DeepSkyBlue" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                        <Setter Property="Border.Background" TargetName="PART_Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                    <GradientStop Color="LightBlue" Offset="0.0" />
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                        <Setter Property="UIElement.Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="button_delete_canel" Foreground="White" Content="取消" HorizontalAlignment="Left" Margin="155,296,0,0" FontWeight="Bold" VerticalAlignment="Top" Width="75" Height="32" Click="button_delete_canel_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                                    <Border.Background>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="DeepSkyBlue" />
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                        <Setter Property="Border.Background" TargetName="PART_Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                                    <GradientStop Color="LightBlue" Offset="0.0" />
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                        <Setter Property="UIElement.Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+    </Viewbox>
 </Window>

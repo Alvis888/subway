@@ -18,7 +18,7 @@
             <Label x:Name="label_start" Content="出发地:" HorizontalAlignment="Left" Margin="32,43,0,0" VerticalAlignment="Top" Foreground="White"/>
             <Label x:Name="label_end" Content="目的地:" HorizontalAlignment="Left" Margin="32,73,0,0" VerticalAlignment="Top" Foreground="White"/>
             <TextBox x:Name="textBox_departure" IsReadOnly="True" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
-            <TextBox x:Name="textBox_destination" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+            <TextBox x:Name="textBox_destination" IsReadOnly="True" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
             <Label x:Name="label" Content="数    量" HorizontalAlignment="Left" Margin="32,98,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.031,0.46" Foreground="White"/>
             <ComboBox x:Name="comboBox_ticketNumber" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,101,0,0"  VerticalAlignment="Top" Width="125" SelectionChanged="comboBox_newSex_SelectionChanged">
                 <ComboBoxItem>1</ComboBoxItem>

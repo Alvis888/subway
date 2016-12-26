@@ -2,6 +2,7 @@
 using subway.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,28 +25,31 @@ namespace subway.Home
         BaseFunc baseF = new BaseFunc();
         //购票单价
         int money;
-        public Home_ticketInfo(string destnation,int ticketNumber,int stationNumber,int fastPreMoney)
+        public Home_ticketInfo(string destnation, int ticketNumber, int stationNumber, int fastPreMoney)
         {
             InitializeComponent();
             //快捷购票单价
             if (stationNumber == 555)
                 money = fastPreMoney;
             else
-            
                 money = preMoney(stationNumber);
-                textBox_destination.Text = destnation;
-                comboBox_ticketNumber.Text = ticketNumber.ToString();
-                textBox_Sum.Text = (ticketNumber * money).ToString();
-                textBox_departure.Text = "郑州东站";
+            textBox_destination.Text = destnation;
+            comboBox_ticketNumber.Text = ticketNumber.ToString();
+            textBox_Sum.Text = (ticketNumber * money).ToString();
+            textBox_departure.Text = "郑州东站";
             //comboBox_ticketNumber.MouseLeave += ComboBox_ticketNumber_MouseLeave;
-            this.MouseMove+= ComboBox_ticketNumber_MouseLeave;
+            this.MouseMove += ComboBox_ticketNumber_MouseLeave;
 
         }
-
+        /// <summary>
+        /// 选择购买数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBox_ticketNumber_MouseLeave(object sender, MouseEventArgs e)
         {
             string ticketNumber = comboBox_ticketNumber.Text;
-           // MessageBox.Show(money.ToString());
+            // MessageBox.Show(money.ToString());
             //  int number = Int32.Parse(ticketNumber);
             textBox_Sum.Text = (money * Int32.Parse(ticketNumber)).ToString();
         }
@@ -81,28 +85,85 @@ namespace subway.Home
         private void comboBox_newSex_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string ticketNumber = comboBox_ticketNumber.Text;
-           // MessageBox.Show(money.ToString());
-          //  int number = Int32.Parse(ticketNumber);
-            textBox_Sum.Text= (money*Int32.Parse( ticketNumber)).ToString();
+            // MessageBox.Show(money.ToString());
+            //  int number = Int32.Parse(ticketNumber);
+            textBox_Sum.Text = (money * Int32.Parse(ticketNumber)).ToString();
         }
-
+        /// <summary>
+        /// 确定付款
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_giveMoney_Click(object sender, RoutedEventArgs e)
         {
+            string info;
+            string username = MainWindow.username;
             Ticket ticket = new Ticket();
             ticket.endAddress = textBox_destination.Text;
             ticket.startAddress = textBox_departure.Text;
             ticket.money = Int32.Parse(textBox_Sum.Text);
             ticket.buyTime = DateTime.Now.ToString();
             ticket.username = MainWindow.username;
-            string info= baseF.SaveTicketInfo(ticket);
-            ticket.ticketNum =Int32.Parse( comboBox_ticketNumber.Text);
+            ticket.ticketNum = Int32.Parse(comboBox_ticketNumber.Text);
+
+            if(ticket.endAddress==""||comboBox_ticketNumber.Text=="")
+            {
+                MessageBox.Show("信息不完整，无法购票");
+            }
+
+
+            if (checkMoney(username, ticket.money))
+            {
+                 info = baseF.SaveTicketInfo(ticket);
+
+            }
+            else
+            {
+                info = "余额不足，请联系管理员充值";
+            }
+          
             //Success
             MessageBox.Show(info);
+            this.Close();
         }
-
+        //取消购票
         private void Button_cancelGiveMoney_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private bool checkMoney(string username, int cost)
+        {
+            int money = 0;
+            ConnectBD connectdb = new ConnectBD();
+            //连接本地数据库
+            SqlConnection conn = connectdb.ConnectDataBase();
+            try
+            {
+                //打开数据库
+                conn.Open();
+                //创建查询语句
+                SqlCommand querySingleInfo = conn.CreateCommand();
+                querySingleInfo.CommandText = "SELECT money FROM coustom where UserName=" + "'" + username + "'";
+                SqlDataReader singleInfoReader = querySingleInfo.ExecuteReader();
+                //有多行数据，用while循环
+                while (singleInfoReader.Read())
+                {
+                     money =Int32.Parse( singleInfoReader["money"].ToString().Trim());
+                }
+                //关闭查询
+                singleInfoReader.Close();
+                //关闭数据库连接
+                if (cost <= money)
+                    return true;
+                else
+                    return false;
+
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("购买失败");
+                return false;
+            }
         }
     }
 }

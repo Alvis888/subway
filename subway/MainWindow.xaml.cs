@@ -27,6 +27,7 @@ namespace subway
         /// 静态变量，获取用户名，用于跨页面传值
         /// </summary>
         public static string username;
+        public static bool isAdmin = false;
 
         public MainWindow()
         {
@@ -40,7 +41,11 @@ namespace subway
             this.Width = x1;//设置窗体宽度
             this.Height = y1;//设置窗体高度
             this.Title = "登陆";
+
+           
         }
+
+      
 
         /// <summary>
         /// 双击密码框
@@ -72,10 +77,10 @@ namespace subway
         private void button_Click(object sender, RoutedEventArgs e)
         {
             BaseFunc baseFc = new BaseFunc();
-            username = textBox_username.Text.Trim();
+            username = textBox_username.Text.Trim().ToLower();
 
 
-            string password = passwordBox_password.Password.Trim();
+            string password = passwordBox_password.Password.Trim().ToLower();
             if(username==""||password=="")
             {
                 MessageBox.Show("请输入正确信息");
@@ -89,7 +94,9 @@ namespace subway
                     //this.Close();
                     // MessageBox.Show("登陆成功");
                     chooseSystem chose = new chooseSystem();
-                    chose.ShowDialog();
+                    isAdmin = true;
+                    this.Close();
+                    chose.ShowDialog(); 
                 }
                 else
                 if (loginInfo == "coustom")
@@ -97,8 +104,11 @@ namespace subway
                     //this.Close();
                     // MessageBox.Show("登陆成功");
                     admin_main main = new admin_main();
-                   // chooseSystem chose = new chooseSystem();
+                    isAdmin = false;
+                    this.Close();
+                    // chooseSystem chose = new chooseSystem();
                     main.ShowDialog();
+                   
                 }
                 else
                 if(loginInfo=="failed")

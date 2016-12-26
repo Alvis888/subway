@@ -57,8 +57,8 @@ namespace subway.Admin
         private void button_Password_Click(object sender, RoutedEventArgs e)
         {
             BaseFunc baseFc = new BaseFunc();
-            string username = textBox_username_Password.Text.Trim();
-            string email = textBox_email_Password.Text.Trim();
+            string username = textBox_username_Password.Text.Trim().ToLower();
+            string email = textBox_email_Password.Text.Trim().ToLower();
             if (username == "" || email == "")
             {
                 MessageBox.Show("请输入正确信息");

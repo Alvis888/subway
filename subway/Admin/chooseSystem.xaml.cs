@@ -31,12 +31,14 @@ namespace subway.Admin
         {
             admin_main chose = new admin_main();
             chose.ShowDialog();
+            this.Close();
         }
 
         private void button_Charge_Click(object sender, RoutedEventArgs e)
         {
-            chooseOpen choose = new chooseOpen();
+            Admin_deleteUser choose = new Admin_deleteUser();
             choose.ShowDialog();
+            this.Close();
         }
     }
 }

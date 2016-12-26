@@ -35,7 +35,7 @@ namespace subway.DAO
                 conn.Open();
                 //创建查询语句
                 SqlCommand querySingleInfo = conn.CreateCommand();
-                querySingleInfo.CommandText = "SELECT * FROM coustom where UserName=" + "'" + username + "'";
+                querySingleInfo.CommandText = "SELECT * FROM admin where UserName=" + "'" + username + "'";
                 SqlDataReader singleInfoReader = querySingleInfo.ExecuteReader();
                 //有多行数据，用while循环
                 while (singleInfoReader.Read())
@@ -44,7 +44,7 @@ namespace subway.DAO
                     if (member.username.Equals(username))
                     {
                         flag = true;
-                        returnInfo = "coustom";
+                        returnInfo = "admin";
                         //关闭查询
                         singleInfoReader.Close();
                         //关闭数据库连接
@@ -62,13 +62,14 @@ namespace subway.DAO
                 //关闭数据库连接
                 conn.Close();
 
-
+                if (returnInfo != "")
+                    return returnInfo;
 
                 //打开数据库
                 conn.Open();
                 //创建查询语句
                 querySingleInfo = conn.CreateCommand();
-                querySingleInfo.CommandText = "SELECT * FROM admin  where UserName=" + "'" + username + "'";
+                querySingleInfo.CommandText = "SELECT * FROM coustom  where UserName=" + "'" + username + "'";
                 singleInfoReader = querySingleInfo.ExecuteReader();
                 //有多行数据，用while循环
                 while (singleInfoReader.Read())
@@ -77,7 +78,7 @@ namespace subway.DAO
                     if (member.username.Equals(username))
                     {
                         flag = true;
-                        returnInfo = "admin";
+                        returnInfo = "coustom";
                     }
                     else
                     {
@@ -207,8 +208,7 @@ namespace subway.DAO
                 //创建查询语句
                 SqlCommand querySingleInfo = conn.CreateCommand();
                 //删除Member表信息
-                querySingleInfo.CommandText = "delete admin  where UserName=" + "'" + username + "'";
-
+                querySingleInfo.CommandText = "delete coustom  where UserName=" + "'" + username + "'";
                 int memberResult = querySingleInfo.ExecuteNonQuery();
                 //关闭数据库连接
                 conn.Close();
@@ -243,13 +243,19 @@ namespace subway.DAO
                 sql = "INSERT INTO ticket(username,startAddress,endAddress,money,phone ,number,buytime,email) VALUES ('" + ticket.username + "','" + ticket.startAddress + "','" +ticket.endAddress + "','" + ticket.money + "','" + ticket.phone + "','" + ticket.ticketNum + "','" + ticket.buyTime + "','" + ticket.email + "')";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 int result = cmd.ExecuteNonQuery();
+
+
+                sql = "update coustom set money=money-"+ticket.money+"";
+                cmd = new SqlCommand(sql, conn);
+                result = cmd.ExecuteNonQuery();
+
                 conn.Close();
-                returnInfo = "Success";
+                returnInfo = "购票成功";
             }
             catch (SqlException e)
             {
                 returnInfo = e.ToString();
-                
+                returnInfo = "购票失败";
                 //FileStream fs = new FileStream("c:\\text\\log2.txt", FileMode.Append, FileAccess.Write);
                 //StreamWriter sw = new StreamWriter(fs); // 创建写入流
                 //sw.WriteLine(e.ToString()); // 写入

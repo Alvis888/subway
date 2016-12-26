@@ -497,15 +497,13 @@
                     </Button.Template>
                 </Button>
             </StackPanel>
-            <!--<Button Content="返回" Grid.Column="2" Margin="32,5,8,0" VerticalAlignment="Top" FontFamily="微软雅黑" Height="31">
+            <Button x:Name="button_logout" Content="退出" Grid.Column="2" Margin="216,0,-136,0" VerticalAlignment="Top" FontFamily="微软雅黑" Height="31" Background="Red" Foreground="White" Click="Button_Click_4">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                    <GradientStop Color="White" Offset="0.0" />
-                                    <GradientStop Color="Silver" Offset="0.5" />
-                                    <GradientStop Color="White" Offset="0.0" />
+                                    <GradientStop Color="SkyBlue" Offset="0.0" />
                                 </LinearGradientBrush>
                             </Border.Background>
                             <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -515,9 +513,9 @@
                                 <Setter Property="Border.Background" TargetName="PART_Background">
                                     <Setter.Value>
                                         <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                                            <GradientStop Color="Silver" Offset="0.0" />
-                                            <GradientStop Color="White" Offset="0.5" />
-                                            <GradientStop Color="Silver" Offset="0.0" />
+                                            <GradientStop Color="Red" Offset="0.0" />
+                                            <GradientStop Color="Red" Offset="0.5" />
+                                            <GradientStop Color="Red" Offset="0.0" />
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>
@@ -532,7 +530,7 @@
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Button.Template>
-            </Button>-->
+            </Button>
             <Image x:Name="image1" HorizontalAlignment="Left" Height="279" Margin="15,16,0,0" VerticalAlignment="Top" Width="336" Source="../Image/ZongXian.jpg" Grid.Column="1" Visibility="Visible" Grid.Row="1"/>
             <Image x:Name="image2" HorizontalAlignment="Left" Height="279" Margin="15,14,0,0" VerticalAlignment="Top" Width="336" Source="../Image/XiLiuHu.jpg" Grid.Column="1" Visibility="Hidden" Grid.Row="1"/>
             <Label x:Name="Time" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="271,25,-70,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="302" Height="25"/>
@@ -588,6 +586,40 @@
                                             <GradientStop Color="Silver" Offset="0.0" />
                                             <GradientStop Color="White" Offset="0.5" />
                                             <GradientStop Color="Silver" Offset="0.0" />
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="ButtonBase.IsPressed" Value="True">
+                                <Setter Property="UIElement.Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="button_back" Content="返回" Grid.Column="2" Margin="216,0,-136,0" VerticalAlignment="Top" FontFamily="微软雅黑" Height="31" Background="Red" Foreground="White" Click="button_back_Click"  Grid.RowSpan="2" Visibility="Hidden">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="SkyBlue" Offset="0.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="UIElement.IsMouseOver" Value="True">
+                                <Setter Property="Border.Background" TargetName="PART_Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                            <GradientStop Color="Red" Offset="0.0" />
+                                            <GradientStop Color="Red" Offset="0.5" />
+                                            <GradientStop Color="Red" Offset="0.0" />
                                         </LinearGradientBrush>
                                     </Setter.Value>
                                 </Setter>

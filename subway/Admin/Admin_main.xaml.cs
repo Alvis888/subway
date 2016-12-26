@@ -39,6 +39,12 @@ namespace subway.Admin
             this.Width = x1;//设置窗体宽度
             this.Height = y1;//设置窗体高度
 
+            if(MainWindow.isAdmin)
+            {
+                button_back.Visibility = Visibility.Visible;
+                button_logout.Visibility = Visibility.Hidden;
+            }
+
 
             ShowTimer = new System.Windows.Threading.DispatcherTimer();
             ShowTimer.Tick += new EventHandler(ShowCurTimer);//起个Timer一直获取当前时间
@@ -603,6 +609,18 @@ namespace subway.Admin
             //MessageBox.Show(ticketNumber.ToString());
             //MessageBox.Show(stationNumber.ToString());
             ticketInfo.Show();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void button_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            chooseSystem chose = new chooseSystem();
+            chose.Show();
         }
     }
 }

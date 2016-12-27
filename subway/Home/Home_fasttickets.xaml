@@ -11,7 +11,7 @@
     </Window.Background>
     <Viewbox Margin="0,0,-8,1">
         <Grid Height="260" Width="391" >
-            <Button x:Name="button_1RMB" Content="1元" Margin="49,30,234,0" VerticalAlignment="Top" Height="48" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951" >
+            <Button x:Name="button_1RMB" Content="{DynamicResource button_1RMB}" Margin="49,30,234,0" VerticalAlignment="Top" Height="48" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951" >
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -47,7 +47,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="button_2RMB" Content="2元" Margin="225,30,54,0" VerticalAlignment="Top" Height="48" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951"  >
+            <Button x:Name="button_2RMB"  Content="{DynamicResource button_2RMB}" Margin="225,30,54,0" VerticalAlignment="Top" Height="48" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951"  >
 
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -84,7 +84,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="button_3RMB" Content="3元" Margin="49,109,234,0" VerticalAlignment="Top" Height="48" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951" >
+            <Button x:Name="button_3RMB"  Content="{DynamicResource button_3RMB}" Margin="49,109,234,0" VerticalAlignment="Top" Height="48" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951" >
 
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -121,7 +121,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="button_4RMB" Content="4元" Margin="225,109,54,0" VerticalAlignment="Top" Height="48" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951" >
+            <Button x:Name="button_4RMB"  Content="{DynamicResource button_4RMB}" Margin="225,109,54,0" VerticalAlignment="Top" Height="48" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951" >
 
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -158,7 +158,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="button_5RMB" Content="5元" Margin="49,183,234,0" VerticalAlignment="Top" Height="48" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951"  >
+            <Button x:Name="button_5RMB"  Content="{DynamicResource button_5RMB}" Margin="49,183,234,0" VerticalAlignment="Top" Height="48" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951"  >
 
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -195,7 +195,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="button_6RMB" Content="6元" Margin="229,183,54,0" VerticalAlignment="Top" Height="48" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951"  >
+            <Button x:Name="button_6RMB"  Content="{DynamicResource button_6RMB}" Margin="229,183,54,0" VerticalAlignment="Top" Height="48" Opacity="0.7" FontFamily="微软雅黑" FontSize="20px" RenderTransformOrigin="-0.353,-1.951"  >
 
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">

@@ -34,26 +34,63 @@ namespace subway.Admin
             this.Width = x1;//设置窗体宽度
             this.Height = y1;//设置窗体高度
 
+            button_charge.Click += Button_Click;
+            button_delete.Click += Button_Click;
+            button_open.Click += Button_Click;
 
-            //设置渐变字体
-            LinearGradientBrush brush = new LinearGradientBrush();
 
-            GradientStop gradientStop1 = new GradientStop();
-            gradientStop1.Offset = 0;
-            gradientStop1.Color = Color.FromArgb(255, 251, 100, 17);
-            brush.GradientStops.Add(gradientStop1);
+            ////设置渐变字体
+            //LinearGradientBrush brush = new LinearGradientBrush();
 
-            GradientStop gradientStop2 = new GradientStop();
-            gradientStop2.Offset = 1;
-            gradientStop2.Color = Color.FromArgb(255, 247, 238, 52);
-            brush.GradientStops.Add(gradientStop2);
+            //GradientStop gradientStop1 = new GradientStop();
+            //gradientStop1.Offset = 0;
+            //gradientStop1.Color = Color.FromArgb(255, 251, 100, 17);
+            //brush.GradientStops.Add(gradientStop1);
 
-            brush.StartPoint = new Point(0.5, 0);
-            brush.EndPoint = new Point(0.5, 1);
-            Welcome.Foreground = brush;
+            //GradientStop gradientStop2 = new GradientStop();
+            //gradientStop2.Offset = 1;
+            //gradientStop2.Color = Color.FromArgb(255, 247, 238, 52);
+            //brush.GradientStops.Add(gradientStop2);
 
-            System.Windows.Media.Effects.DropShadowEffect ds = new System.Windows.Media.Effects.DropShadowEffect();
-            Welcome.Effect = ds;  
+            //brush.StartPoint = new Point(0.5, 0);
+            //brush.EndPoint = new Point(0.5, 1);
+            //Welcome.Foreground = brush;
+
+            //System.Windows.Media.Effects.DropShadowEffect ds = new System.Windows.Media.Effects.DropShadowEffect();
+            //Welcome.Effect = ds;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+
+            switch (btn.Name)
+            {
+                case "button_charge":
+                    button_charge.Background = new SolidColorBrush(Colors.LightBlue);
+                    button_delete.Background = new SolidColorBrush(Colors.SkyBlue);
+                    button_open.Background = new SolidColorBrush(Colors.SkyBlue);
+                    border_charge.Visibility = Visibility.Visible;
+                    border_delete.Visibility = Visibility.Hidden;
+                    border_open.Visibility = Visibility.Hidden;
+                    break;
+                case "button_delete":
+                    button_charge.Background = new SolidColorBrush(Colors.SkyBlue);
+                    button_delete.Background = new SolidColorBrush(Colors.LightBlue);
+                    button_open.Background = new SolidColorBrush(Colors.SkyBlue);
+                    border_charge.Visibility = Visibility.Hidden;
+                    border_delete.Visibility = Visibility.Visible;
+                    border_open.Visibility = Visibility.Hidden;
+                    break;
+                case "button_open":
+                    button_charge.Background = new SolidColorBrush(Colors.SkyBlue);
+                    button_delete.Background = new SolidColorBrush(Colors.SkyBlue);
+                    button_open.Background = new SolidColorBrush(Colors.LightBlue);
+                    border_charge.Visibility = Visibility.Hidden;
+                    border_delete.Visibility = Visibility.Hidden;
+                    border_open.Visibility = Visibility.Visible;
+                    break;
+            }
         }
 
         #region 充值
@@ -65,8 +102,14 @@ namespace subway.Admin
         private void buttonChargeOK_Click(object sender, RoutedEventArgs e)
         {
             string phone = textbox_chargePhone.Text;
-            string password = textbox_chargePassword.Text;
+            string password = textbox_chargePassword.Text.Trim().ToLower(); ;
             string money = textbox_chargeRemainingMoney.Text;
+
+            if (phone == "" || password == "")
+            {
+                MessageBox.Show("信息不完整，请重新输入");
+                return;
+            }
             SqlConnection conn = connectdb.ConnectDataBase();
             try
             {
@@ -79,6 +122,12 @@ namespace subway.Admin
                 //关闭数据库连接
                 conn.Close();
                 MessageBox.Show("充值成功");
+                textbox_chargePhone.Clear();
+                textbox_chargePassword.Clear();
+                textbox_chargeRemainingMoney.Clear();
+                textbox_chargeNumber.Clear();
+                
+
             }
             catch (SqlException)
             {
@@ -104,10 +153,10 @@ namespace subway.Admin
         /// <param name="e"></param>
         private void textbox_chargePassword_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (textbox_chargePhone.Text != "" || textbox_chargePassword.Text != "")
+            if (textbox_chargePhone.Text.Trim() != "" || textbox_chargePassword.Text.Trim() != "")
             {
                 string phone = textbox_chargePhone.Text;
-                string password = textbox_chargePassword.Text;
+                string password = textbox_chargePassword.Text.Trim().ToLower();
                 //连接本地数据库
                 SqlConnection conn = connectdb.ConnectDataBase();
                 try
@@ -123,7 +172,7 @@ namespace subway.Admin
                     {
                         remainingMoney = singleInfoReader["money"].ToString().Trim();
                     }
-                    textbox_chargeRemainingMoney.Text = remainingMoney;
+                    textbox_chargeRemainingMoney.Text = remainingMoney.Trim();
                     //关闭查询
                     singleInfoReader.Close();
                     //关闭数据库连接
@@ -148,7 +197,7 @@ namespace subway.Admin
 
             if (Int32.TryParse(textbox_chargeNumber.Text, out num))
             {
-                textbox_chargeRemainingMoney.Text = (Int32.Parse(remainingMoney) + num).ToString();
+                textbox_chargeRemainingMoney.Text = (Int32.Parse(remainingMoney) + num).ToString().Trim().ToLower(); ;
             }
         }
         #endregion
@@ -161,8 +210,8 @@ namespace subway.Admin
         /// <param name="e"></param>
         private void textBox_newPassword_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string username = textBox_newName.Text;
-            string phone = textBox_newPhone.Text;
+            string username = textBox_newName.Text.Trim().ToLower(); ;
+            string phone = textBox_newPhone.Text.Trim().ToLower(); ;
             string userID = null;
             SqlConnection conn = connectdb.ConnectDataBase();
             try
@@ -171,7 +220,7 @@ namespace subway.Admin
                 conn.Open();
                 //创建查询语句
                 SqlCommand querySingleInfo = conn.CreateCommand();
-                querySingleInfo.CommandText = "select id from coustom where username="+"'" + username + "' and phonenumber="+"'" + phone + "' ";
+                querySingleInfo.CommandText = "select id from coustom where username=" + "'" + username + "' and phonenumber=" + "'" + phone + "' ";
                 SqlDataReader singleInfoReader = querySingleInfo.ExecuteReader();
                 //有多行数据，用while循环
                 while (singleInfoReader.Read())
@@ -212,19 +261,31 @@ namespace subway.Admin
             button_newOK.IsEnabled = true;
         }
         /// <summary>
-        /// 点击开户取消按钮
+        /// 点击开户确定按钮
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button_newOK_Click(object sender, RoutedEventArgs e)
         {
-            string username = textBox_newName.Text;
+            string username = textBox_newName.Text.Trim().ToLower(); ;
             string phone = textBox_newPhone.Text;
-            string password = textBox_newPassword.Text;
+            string password = textBox_newPassword.Text.Trim().ToLower(); ;
             string sex = comboBox_newSex.Text;
-            string email = textBox_newEmail.Text;
+            string email = textBox_newEmail.Text.Trim().ToLower(); ;
             int money = 0;
             int _money;
+            if (username == "" || phone == "" || password == "" || sex == "" || email == "")
+            {
+                MessageBox.Show("信息不完整，请重新输入");
+                return;
+            }
+            if(!email.Contains('@')|| !email.Contains('.'))
+            {
+                textBox_newEmail.Text = "输入格式错误";
+                MessageBox.Show("邮箱输入格式错误");
+                //  button_newOK.IsEnabled = false;
+                return;
+            }
             if (Int32.TryParse(textBox_newMoney.Text, out _money))
             {
                 money = _money;
@@ -232,7 +293,8 @@ namespace subway.Admin
             else
             {
                 textBox_newMoney.Text = "输入格式错误";
-                button_newOK.IsEnabled = false;
+                MessageBox.Show("金额输入格式错误");
+              //  button_newOK.IsEnabled = false;
                 return;
             }
             button_newOK.IsEnabled = true;
@@ -248,6 +310,12 @@ namespace subway.Admin
                 //关闭数据库连接
                 conn.Close();
                 MessageBox.Show("开户成功");
+                textBox_newEmail.Clear();
+                textBox_newMoney.Clear();
+                textBox_newName.Clear();
+                textBox_newPassword.Clear();
+                textBox_newPhone.Clear();
+                comboBox_newSex.Text = "";
             }
             catch (SqlException)
             {
@@ -258,8 +326,9 @@ namespace subway.Admin
 
         private void textBox_deletePassword_TextChanged(object sender, TextChangedEventArgs e)
         {
+            string remainingMoney = "";
             string phone = textBox_deletePhone.Text;
-            string password = textBox_deletePassword.Text;
+            string password = textBox_deletePassword.Text.Trim().ToLower(); ;
             //连接本地数据库
             SqlConnection conn = connectdb.ConnectDataBase();
             try
@@ -275,7 +344,7 @@ namespace subway.Admin
                 {
                     remainingMoney = singleInfoReader["money"].ToString().Trim();
                 }
-                    textBox_deleteMoney.Text = remainingMoney;
+                textBox_deleteMoney.Text = remainingMoney;
                 //关闭查询
                 singleInfoReader.Close();
                 //关闭数据库连接
@@ -292,7 +361,7 @@ namespace subway.Admin
             if (textBox_deletePhone.Text != "")
             {
                 string phone = textBox_deletePhone.Text;
-                string password = textBox_deletePassword.Text;
+                string password = textBox_deletePassword.Text.Trim().ToLower(); ;
                 //连接本地数据库
                 SqlConnection conn = connectdb.ConnectDataBase();
                 try
@@ -308,7 +377,7 @@ namespace subway.Admin
                     {
                         remainingMoney = singleInfoReader["money"].ToString().Trim();
                     }
-                    if(remainingMoney==""|| remainingMoney==null)
+                    if (remainingMoney == "" || remainingMoney == null)
                     {
                         MessageBox.Show("用户不存在");
                     }
@@ -326,14 +395,14 @@ namespace subway.Admin
             else { }
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void button_delete_OK_Click(object sender, RoutedEventArgs e)
         {
-            string password=textBox_deletePassword.Text;
+            string password = textBox_deletePassword.Text.Trim().ToLower(); ;
             string phone = textBox_deletePhone.Text;
-            string DB_pwd="";
-            if(password==""|| password==null)
+            string DB_pwd = "";
+            if (password == "" || phone == null)
             {
-                MessageBox.Show("请输入密码");
+                MessageBox.Show("信息不完整，请重新输入");
                 return;
             }
             //连接本地数据库
@@ -356,24 +425,31 @@ namespace subway.Admin
 
                 if (DB_pwd.Equals(password))
                 {
-                     querySingleInfo = conn.CreateCommand();
-                    querySingleInfo.CommandText = "delete from coustom where phonenumber="+"'"+phone+"'";
+                    querySingleInfo = conn.CreateCommand();
+                    querySingleInfo.CommandText = "delete from coustom where phonenumber=" + "'" + phone + "'";
                     int lineNumber = querySingleInfo.ExecuteNonQuery();
                     MessageBox.Show("销户成功");
+                    textBox_deleteMoney.Clear();
+                    textBox_deletePassword.Clear();
+                    textBox_deletePhone.Clear();
+                    conn.Close();
+                    return;
                 }
                 else
                 {
                     MessageBox.Show("密码错误");
+                    conn.Close();
                     return;
                 }
                 //关闭数据库连接
-                conn.Close();
-               
+                //conn.Close();
+
             }
             catch (SqlException)
             {
                 MessageBox.Show("销户失败");
             }
+            conn.Close();
         }
 
         private void textBox_deletePhone_TextChanged(object sender, TextChangedEventArgs e)
@@ -381,11 +457,31 @@ namespace subway.Admin
 
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void button_delete_canel_Click(object sender, RoutedEventArgs e)
         {
             textBox_deletePassword.Clear();
             textBox_deletePhone.Clear();
             textBox_deleteMoney.Clear();
+        }
+
+        private void button_back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            chooseSystem chose = new chooseSystem();
+            chose.Show();
+        }
+
+        private void textBox_newMoney_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //int _money;
+            //string money = textBox_newMoney.Text;
+            //if(!Int32.TryParse(money, out _money))
+            //{
+            //    button_newOK.IsEnabled = false;
+            //    //textBox_newMoney.Text = "格式不正确";
+            //}
+            //else
+            //    button_newOK.IsEnabled = true;
         }
     }
 }

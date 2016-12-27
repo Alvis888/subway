@@ -26,7 +26,10 @@ namespace subway
         /// <summary>
         /// 静态变量，获取用户名，用于跨页面传值
         /// </summary>
+        
+        public string _currentLan = string.Empty;
         public static string username;
+        public static string currentCultureName="zh-cn";
         public static bool isAdmin = false;
 
         public MainWindow()
@@ -42,7 +45,8 @@ namespace subway
             this.Height = y1;//设置窗体高度
             this.Title = "登陆";
 
-           
+            _currentLan = "ZH";
+
         }
 
       
@@ -158,6 +162,31 @@ namespace subway
         private string getUsername()
         {
             return textBox_username.Text;
+        }
+
+        public void button_chooseLanguge_Click(object sender, RoutedEventArgs e)
+        {
+            string message = TryFindResource("Message") as string;
+
+          //  MessageBox.Show(message);
+
+            // TODO: 切换系统资源文件
+            ResourceDictionary dict = new ResourceDictionary();
+
+            if (_currentLan == "ZH")
+            {
+                dict.Source = new Uri("./ResxResources/EN.xaml", UriKind.Relative);
+
+                _currentLan = "EN";
+            }
+            else
+            {
+                dict.Source = new Uri("./ResxResources/ZH.xaml", UriKind.Relative);
+
+                _currentLan = "ZH";
+            }
+
+            Application.Current.Resources.MergedDictionaries[0] = dict;
         }
     }
 }

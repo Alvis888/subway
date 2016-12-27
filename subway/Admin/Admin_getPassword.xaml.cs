@@ -64,6 +64,13 @@ namespace subway.Admin
                 MessageBox.Show("请输入正确信息");
                 return;
             }
+            if (!email.Contains('@') || !email.Contains('.'))
+            {
+                textBox_email_Password.Text = "输入格式错误";
+                MessageBox.Show("邮箱输入格式错误");
+                //  button_newOK.IsEnabled = false;
+                return;
+            }
             else
             {
                 ForgetPassword getPassword = new ForgetPassword();

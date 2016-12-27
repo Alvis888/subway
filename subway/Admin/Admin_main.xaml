@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:subway.Admin"
         mc:Ignorable="d"
-        Title="admin_main" Height="2150.556" Width="4082.593" WindowStartupLocation="Manual" WindowState="Maximized">
+        Title="admin_main" Height="555.106" Width="1146.593" WindowStartupLocation="Manual" WindowState="Maximized">
+    <Window.Resources>
+        <local:chooseLanguage x:Key="r1"/>
+    </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="/subway;component/Image/Nipic_13154091_20150814163659003000.jpg"/>
     </Window.Background>
     <Viewbox Margin="0,0,83,69">
-        <Grid  Height="433" Width="636" Margin="0" >
+        <Grid  Height="433" Width="636" Margin="0" DataContext="StaticResource r1" >
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="121*"/>
                 <ColumnDefinition Width="323*"/>
@@ -21,12 +25,12 @@
                 <RowDefinition Height="307*"/>
                 <RowDefinition Height="60*"/>
             </Grid.RowDefinitions>
-            <Label Content="当前位置:" Grid.Column="1" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.576,0.57" FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" Height="26" Width="61"/>
-            <Label Content="二七广场 " Grid.Column="1" HorizontalAlignment="Left" Margin="80,6,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" Height="34" Width="82"/>
-            <Label Content="郑州地铁" HorizontalAlignment="Left" Margin="0,0,0,42"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" FontWeight="Black" FontStyle="Italic" Width="64"/>
+            <Label x:Name="lable_nowPosition" Content="{DynamicResource lable_nowPosition}" Grid.Column="1" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.576,0.57" FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" Height="26" Width="61"/>
+            <Label x:Name="lable_nowPositionPlace" Content="{DynamicResource lable_nowPositionPlace}" Grid.Column="1" HorizontalAlignment="Left" Margin="80,6,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" Height="34" Width="191"/>
+            <Label x:Name="lable_subwayName"  Content="{DynamicResource lable_subwayName}" HorizontalAlignment="Left" Margin="0,0,0,35"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" FontWeight="Black" FontStyle="Italic" Width="149" Grid.ColumnSpan="2"/>
             <Label Content="ZhengZhou Subway System" Margin="-4,24,10,0" VerticalAlignment="Top" Height="24" FontSize="8"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
-            <Label Content="选择张数" HorizontalAlignment="Left" Margin="27,53,0,0" VerticalAlignment="Top" Grid.RowSpan="2"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" Height="26" Width="58"/>
-            <Button x:Name="button_Number_1"  Content="1张" HorizontalAlignment="Left" Margin="18,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
+            <Label  x:Name="lable_chooseTicket" Content="{DynamicResource lable_chooseTicket}" HorizontalAlignment="Left" Margin="27,53,0,0" VerticalAlignment="Top" Grid.RowSpan="2"  FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" Height="26" Width="58"/>
+            <Button x:Name="button_Number_1"  Content="{DynamicResource button_Number_1}" HorizontalAlignment="Left" Margin="18,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -62,7 +66,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button  x:Name="button_Number_2" Content="2张" HorizontalAlignment="Left" Margin="18,48,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
+            <Button  x:Name="button_Number_2"  Content="{DynamicResource button_Number_2}" HorizontalAlignment="Left" Margin="18,48,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -98,7 +102,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button  x:Name="button_Number_3" Content="3张" HorizontalAlignment="Left" Margin="18,77,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
+            <Button  x:Name="button_Number_3"  Content="{DynamicResource button_Number_3}" HorizontalAlignment="Left" Margin="18,77,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -134,7 +138,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button  x:Name="button_Number_4" Content="4张" HorizontalAlignment="Left" Margin="18,107,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
+            <Button  x:Name="button_Number_4"  Content="{DynamicResource button_Number_4}" HorizontalAlignment="Left" Margin="18,107,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -170,7 +174,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button  x:Name="button_Number_5" Content="5张" HorizontalAlignment="Left" Margin="18,137,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
+            <Button  x:Name="button_Number_5"  Content="{DynamicResource button_Number_5}" HorizontalAlignment="Left" Margin="18,137,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -206,7 +210,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button  x:Name="button_Number_6" Content="6张" HorizontalAlignment="Left" Margin="18,167,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
+            <Button  x:Name="button_Number_6" Content="{DynamicResource button_Number_6}" HorizontalAlignment="Left" Margin="18,167,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -242,7 +246,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button  x:Name="button_Number_7" Content="7张" HorizontalAlignment="Left" Margin="18,200,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
+            <Button  x:Name="button_Number_7"  Content="{DynamicResource button_Number_7}" HorizontalAlignment="Left" Margin="18,200,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -278,7 +282,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button  x:Name="button_Number_8" Content="8张" HorizontalAlignment="Left" Margin="18,230,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
+            <Button  x:Name="button_Number_8"  Content="{DynamicResource button_Number_8}" HorizontalAlignment="Left" Margin="18,230,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"   FontFamily="微软雅黑" Height="25">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -314,7 +318,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="English" Margin="18,10,40,10" Grid.Row="2"   FontFamily="微软雅黑">
+            <Button x:Name="button_chooseLanguge" Content="{DynamicResource button_chooseLanguge}" Margin="18,10,40,10" Grid.Row="2"   FontFamily="微软雅黑" Click="button_chooseLanguge_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -350,7 +354,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Content="快捷购票" HorizontalAlignment="Left" Margin="32,10,0,10" Grid.Row="2" Width="104" Grid.Column="2"   FontFamily="微软雅黑" Click="Button_Click_3">
+            <Button x:Name="button_fastTicket" Content="{DynamicResource button_fastTicket}" HorizontalAlignment="Left" Margin="32,10,0,10" Grid.Row="2" Width="104" Grid.Column="2"   FontFamily="微软雅黑" Click="Button_Click_3">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -387,11 +391,11 @@
                 </Button.Template>
             </Button>
             <StackPanel Grid.Column="2" Height="153" VerticalAlignment="Top" Margin="13,61,8,0"  Grid.RowSpan="2">
-                <Label Content="选择路线" Margin="0,0,13,0" FontWeight="Bold" RenderTransformOrigin="0.443,-0.275" HorizontalAlignment="Right" Width="70"   FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}"/>
-                <Button Content="总图" Margin="0,0,8,0" HorizontalAlignment="Right" Width="77"  FontFamily="微软雅黑" Click="Button_Click" Height="29">
+                <Label x:Name="lable_chooseRouter" Content="{DynamicResource lable_chooseRouter}" FontWeight="Bold" RenderTransformOrigin="0.443,-0.275" HorizontalAlignment="Center" VerticalContentAlignment="Center" Width="65"   FontFamily="微软雅黑" Foreground="{DynamicResource {x:Static SystemColors.InfoTextBrushKey}}" Margin="50,0,10,0"/>
+                <Button x:Name="button_fullMap" Content="{DynamicResource button_fullMap}" Margin="0,0,8,0" HorizontalAlignment="Right" Width="77"  FontFamily="微软雅黑" Click="Button_Click" Height="29">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" x:Name="PART_Background">
                                 <Border.Background>
                                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                         <GradientStop Color="White" Offset="0.0" />
@@ -399,11 +403,11 @@
                                         <GradientStop Color="White" Offset="0.0" />
                                     </LinearGradientBrush>
                                 </Border.Background>
-                                <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Border>
                             <ControlTemplate.Triggers>
-                                <Trigger Property="UIElement.IsMouseOver" Value="True">
-                                    <Setter Property="Border.Background" TargetName="PART_Background">
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" TargetName="PART_Background">
                                         <Setter.Value>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                                 <GradientStop Color="Silver" Offset="0.0" />
@@ -413,8 +417,8 @@
                                         </Setter.Value>
                                     </Setter>
                                 </Trigger>
-                                <Trigger Property="ButtonBase.IsPressed" Value="True">
-                                    <Setter Property="UIElement.Effect">
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Effect">
                                         <Setter.Value>
                                             <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
                                         </Setter.Value>
@@ -424,10 +428,10 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button Content="1号线" Margin="0,10,8,0" HorizontalAlignment="Right" Width="77" FontFamily="微软雅黑" Click="Button_Click_1" Height="28">
+                <Button x:Name="button_1LineMap" Content="{DynamicResource button_1LineMap}" Margin="0,10,8,0" HorizontalAlignment="Right" Width="77" FontFamily="微软雅黑" Click="Button_Click_1" Height="28">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" x:Name="PART_Background">
                                 <Border.Background>
                                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                         <GradientStop Color="White" Offset="0.0" />
@@ -435,11 +439,11 @@
                                         <GradientStop Color="White" Offset="0.0" />
                                     </LinearGradientBrush>
                                 </Border.Background>
-                                <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Border>
                             <ControlTemplate.Triggers>
-                                <Trigger Property="UIElement.IsMouseOver" Value="True">
-                                    <Setter Property="Border.Background" TargetName="PART_Background">
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" TargetName="PART_Background">
                                         <Setter.Value>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                                 <GradientStop Color="Silver" Offset="0.0" />
@@ -449,8 +453,8 @@
                                         </Setter.Value>
                                     </Setter>
                                 </Trigger>
-                                <Trigger Property="ButtonBase.IsPressed" Value="True">
-                                    <Setter Property="UIElement.Effect">
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Effect">
                                         <Setter.Value>
                                             <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
                                         </Setter.Value>
@@ -460,10 +464,10 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button Content="2号线" Margin="0,13,8,0" HorizontalAlignment="Right" Width="77" FontFamily="微软雅黑" Click="Button_Click_2" Height="31">
+                <Button x:Name="button_2LineMap" Content="{DynamicResource button_2LineMap}" Margin="0,13,8,0" HorizontalAlignment="Right" Width="77" FontFamily="微软雅黑" Click="Button_Click_2" Height="31">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" x:Name="PART_Background">
                                 <Border.Background>
                                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                         <GradientStop Color="White" Offset="0.0" />
@@ -471,11 +475,11 @@
                                         <GradientStop Color="White" Offset="0.0" />
                                     </LinearGradientBrush>
                                 </Border.Background>
-                                <ContentPresenter Content="{TemplateBinding ContentControl.Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Border>
                             <ControlTemplate.Triggers>
-                                <Trigger Property="UIElement.IsMouseOver" Value="True">
-                                    <Setter Property="Border.Background" TargetName="PART_Background">
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" TargetName="PART_Background">
                                         <Setter.Value>
                                             <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                                                 <GradientStop Color="Silver" Offset="0.0" />
@@ -485,8 +489,8 @@
                                         </Setter.Value>
                                     </Setter>
                                 </Trigger>
-                                <Trigger Property="ButtonBase.IsPressed" Value="True">
-                                    <Setter Property="UIElement.Effect">
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Effect">
                                         <Setter.Value>
                                             <DropShadowEffect BlurRadius="10" Color="Black" Direction="0" Opacity="0.6" RenderingBias="Performance" ShadowDepth="0" />
                                         </Setter.Value>
@@ -497,7 +501,7 @@
                     </Button.Template>
                 </Button>
             </StackPanel>
-            <Button x:Name="button_logout" Content="退出" Grid.Column="2" Margin="216,0,-136,0" VerticalAlignment="Top" FontFamily="微软雅黑" Height="31" Background="Red" Foreground="White" Click="Button_Click_4">
+            <Button x:Name="button_logout"  Content="{DynamicResource button_logout}" Grid.Column="2" Margin="216,0,-136,0" VerticalAlignment="Top" FontFamily="微软雅黑" Height="31" Background="Red" Foreground="White" Click="Button_Click_4">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -565,7 +569,7 @@
             <RadioButton x:Name="radioButton_2_12" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="266,134,0,0" Grid.Row="1" VerticalAlignment="Top"  Visibility="Hidden" Height="14" Width="19"/>
             <RadioButton x:Name="radioButton_2_13" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="288,134,0,0" Grid.Row="1" VerticalAlignment="Top"  Visibility="Hidden" Height="14" Width="19"/>
             <RadioButton x:Name="radioButton_2_14" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="308,134,0,0" Grid.Row="1" VerticalAlignment="Top"  Visibility="Hidden" Height="14" Width="19"/>
-            <Button x:Name="button_OkToPay" Content="购           买" FontFamily="微软雅黑" FontSize="25" Foreground="#4285f4" Grid.Column="1" Margin="79,10,71,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Click="button_OkToPay_Click">
+            <Button x:Name="button_OkToPay" Content="{DynamicResource button_OkToPay}" FontFamily="微软雅黑" FontSize="25" Foreground="#4285f4" Grid.Column="1" Margin="79,10,71,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Click="button_OkToPay_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">

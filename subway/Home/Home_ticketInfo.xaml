@@ -14,12 +14,12 @@
     </Window.Background>-->
     <Viewbox Margin="0,0,2,-10" >
         <Grid Margin="0,0,2,3" Height="208" Width="279" >
-            <Label x:Name="label2" Content="购票信息" HorizontalAlignment="Left" Margin="73,2,0,0" VerticalAlignment="Top" FontFamily="微软雅黑" Foreground="Gray" FontSize="25px"  HorizontalContentAlignment="Center" />
-            <Label x:Name="label_start" Content="出发地:" HorizontalAlignment="Left" Margin="32,43,0,0" VerticalAlignment="Top" Foreground="White"/>
-            <Label x:Name="label_end" Content="目的地:" HorizontalAlignment="Left" Margin="32,73,0,0" VerticalAlignment="Top" Foreground="White"/>
+            <Label x:Name="label_ticketInfo"  Content="{DynamicResource label_ticketInfo}" HorizontalAlignment="Left" Margin="73,2,0,0" VerticalAlignment="Top" FontFamily="微软雅黑" Foreground="Gray" FontSize="25px"  HorizontalContentAlignment="Center" />
+            <Label x:Name="label_start"  Content="{DynamicResource label_start}" HorizontalAlignment="Left" Margin="32,43,0,0" VerticalAlignment="Top" Foreground="White"/>
+            <Label x:Name="label_end"  Content="{DynamicResource label_end}" HorizontalAlignment="Left" Margin="32,73,0,0" VerticalAlignment="Top" Foreground="White"/>
             <TextBox x:Name="textBox_departure" IsReadOnly="True" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
             <TextBox x:Name="textBox_destination" IsReadOnly="True" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
-            <Label x:Name="label" Content="数    量" HorizontalAlignment="Left" Margin="32,98,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.031,0.46" Foreground="White"/>
+            <Label x:Name="label_ticketNumber"  Content="{DynamicResource label_ticketNumber}" HorizontalAlignment="Left" Margin="32,98,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.031,0.46" Foreground="White"/>
             <ComboBox x:Name="comboBox_ticketNumber" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,101,0,0"  VerticalAlignment="Top" Width="125" SelectionChanged="comboBox_newSex_SelectionChanged">
                 <ComboBoxItem>1</ComboBoxItem>
                 <ComboBoxItem>2</ComboBoxItem>
@@ -32,10 +32,10 @@
                 <ComboBoxItem>9</ComboBoxItem>
                 <ComboBoxItem>10</ComboBoxItem>
             </ComboBox>
-            <Label x:Name="label1" Content="总   价：" HorizontalAlignment="Left" Margin="32,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.766,0.606" Foreground="White"/>
+            <Label x:Name="label_sumMoney" Content="{DynamicResource label_sumMoney}" HorizontalAlignment="Left" Margin="32,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.766,0.606" Foreground="White"/>
             <TextBox x:Name="textBox_Sum" IsReadOnly="True" Opacity="0.7" HorizontalAlignment="Left" Height="23" Margin="106,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
 
-            <Button x:Name="Button_giveMoney" Content="付款" IsDefault="true" HorizontalAlignment="Left" Margin="156,166,0,0" VerticalAlignment="Top" Width="75" Height="25" Opacity="0.7" Click="Button_giveMoney_Click" >
+            <Button x:Name="Button_giveMoney"  Content="{DynamicResource Button_giveMoney}" IsDefault="true" HorizontalAlignment="Left" Margin="156,166,0,0" VerticalAlignment="Top" Width="75" Height="25" Opacity="0.7" Click="Button_giveMoney_Click" >
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">
@@ -71,7 +71,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="Button_cancelGiveMoney" Content="取消" IsCancel="False" HorizontalAlignment="Left" Margin="32,166,0,0" VerticalAlignment="Top" Width="75" Height="25" Opacity="0.7" Click="Button_cancelGiveMoney_Click">
+            <Button x:Name="Button_cancelGiveMoney"  Content="{DynamicResource Button_cancelGiveMoney}" IsCancel="False" HorizontalAlignment="Left" Margin="32,166,0,0" VerticalAlignment="Top" Width="75" Height="25" Opacity="0.7" Click="Button_cancelGiveMoney_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border BorderBrush="{TemplateBinding Control.BorderBrush}" BorderThickness="0" CornerRadius="8,8,8,8" Name="PART_Background">

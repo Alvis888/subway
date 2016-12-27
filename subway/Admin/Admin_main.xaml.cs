@@ -1,4 +1,4 @@
-﻿using MainChoose;
+﻿
 using subway.Home;
 using System;
 using System.Collections.Generic;
@@ -23,6 +23,7 @@ namespace subway.Admin
     /// </summary>
     public partial class admin_main : Window
     {
+        public string _currentLan = string.Empty;
         private DispatcherTimer ShowTimer;
         int ticketNumber = 0;
         int stationNumber = 0;
@@ -239,7 +240,7 @@ namespace subway.Admin
             switch (btn.Name.ToString())
             {
                 case "button_Number_1":
-                    btn.Content = "选中 1";
+                    btn.Content = " 1";
                     btn.Foreground = new SolidColorBrush(Colors.Blue); 
                     button_Number_2.Content = "2张";
                     button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
@@ -259,7 +260,7 @@ namespace subway.Admin
                     ticketNumber = 1;
                     break;
                 case "button_Number_2":
-                    btn.Content = "选中 2";
+                    btn.Content = " 2";
                     btn.Foreground = new SolidColorBrush(Colors.Blue);
                     button_Number_1.Content = "1张";
                     button_Number_1.Foreground = new SolidColorBrush(Colors.Black);
@@ -278,7 +279,7 @@ namespace subway.Admin
                     ticketNumber = 2;
                     break;
                 case "button_Number_3":
-                    btn.Content = "选中 3";
+                    btn.Content = " 3";
                     btn.Foreground = new SolidColorBrush(Colors.Blue);
                     button_Number_2.Content = "2张";
                     button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
@@ -298,7 +299,7 @@ namespace subway.Admin
                     break;
                 case "button_Number_4":
 
-                    btn.Content = "选中 4";
+                    btn.Content = " 4";
                     btn.Foreground = new SolidColorBrush(Colors.Blue);
                     button_Number_2.Content = "2张";
                     button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
@@ -318,7 +319,7 @@ namespace subway.Admin
                     break;
                 case "button_Number_5":
 
-                    btn.Content = "选中 5";
+                    btn.Content = " 5";
                     btn.Foreground = new SolidColorBrush(Colors.Blue);
                     button_Number_2.Content = "2张";
                     button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
@@ -338,7 +339,7 @@ namespace subway.Admin
                     break;
                 case "button_Number_6":
 
-                    btn.Content = "选中 6";
+                    btn.Content = " 6";
                     btn.Foreground = new SolidColorBrush(Colors.Blue);
                     button_Number_2.Content = "2张";
                     button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
@@ -358,7 +359,7 @@ namespace subway.Admin
                     break;
                 case "button_Number_7":
 
-                    btn.Content = "选中 7";
+                    btn.Content = " 7";
                     btn.Foreground = new SolidColorBrush(Colors.Blue);
                     button_Number_2.Content = "2张";
                     button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
@@ -378,7 +379,7 @@ namespace subway.Admin
                     break;
                 case "button_Number_8":
 
-                    btn.Content = "选中 8";
+                    btn.Content = " 8";
                     btn.Foreground = new SolidColorBrush(Colors.Blue);
                     button_Number_2.Content = "2张";
                     button_Number_2.Foreground = new SolidColorBrush(Colors.Black);
@@ -621,6 +622,32 @@ namespace subway.Admin
             this.Close();
             chooseSystem chose = new chooseSystem();
             chose.Show();
+        }
+
+        private void button_chooseLanguge_Click(object sender, RoutedEventArgs e)
+        {
+
+            string message = TryFindResource("Message") as string;
+
+            //  MessageBox.Show(message);
+
+            // TODO: 切换系统资源文件
+            ResourceDictionary dict = new ResourceDictionary();
+
+            if (_currentLan == "ZH")
+            {
+                dict.Source = new Uri("./ResxResources/EN.xaml", UriKind.Relative);
+
+                _currentLan = "EN";
+            }
+            else
+            {
+                dict.Source = new Uri("./ResxResources/ZH.xaml", UriKind.Relative);
+
+                _currentLan = "ZH";
+            }
+
+            Application.Current.Resources.MergedDictionaries[0] = dict;
         }
     }
 }

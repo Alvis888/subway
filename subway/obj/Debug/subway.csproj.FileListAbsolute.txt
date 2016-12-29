@@ -126,3 +126,38 @@ E:\C#作业\subway\subway\obj\Debug\XamlResource\Languages.baml
 E:\C#作业\subway\subway\obj\Debug\subway.g.resources
 E:\C#作业\subway\subway\obj\Debug\subway.Properties.Resources.resources
 E:\C#作业\subway\subway\obj\Debug\subway.csproj.GenerateResource.Cache
+C:\Users\hongguang xie\Desktop\subway\subway\bin\Debug\subway.exe.config
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\subway.exe
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\subway.pdb
+C:\Users\hongguang xie\Desktop\subway\subway\bin\Debug\subway.exe
+C:\Users\hongguang xie\Desktop\subway\subway\bin\Debug\subway.pdb
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Admin\chooseOpen.baml
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Admin\Admin_getPassword.g.cs
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Admin\Admin_main.g.cs
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Admin\chooseOpen.g.cs
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Admin\chooseSystem.g.cs
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Home\Home_fasttickets.g.cs
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Home\Home_mainPage.g.cs
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Home\Home_ticketInfo.g.cs
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\MainWindow.g.cs
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\App.g.cs
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\subway_MarkupCompile.cache
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\subway_MarkupCompile.lref
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Admin\Admin_getPassword.baml
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Admin\Admin_main.baml
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Admin\chooseSystem.baml
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Home\Home_fasttickets.baml
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Home\Home_mainPage.baml
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\Home\Home_ticketInfo.baml
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\MainWindow.baml
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\XamlResource\Languages.baml
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\subway.g.resources
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\subway.Properties.Resources.resources
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\subway.csproj.GenerateResource.Cache
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\subway.ResxResources.zh-cn.resources
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\subway.ResxResources.en-us.resources
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\App.baml
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\ResxResources\EN.baml
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\ResxResources\ZH.baml
+C:\Users\hongguang xie\Desktop\subway\subway\obj\Debug\subway.csprojResolveAssemblyReference.cache

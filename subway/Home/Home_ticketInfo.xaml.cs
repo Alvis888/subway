@@ -36,7 +36,7 @@ namespace subway.Home
             textBox_destination.Text = destnation;
             comboBox_ticketNumber.Text = ticketNumber.ToString();
             textBox_Sum.Text = (ticketNumber * money).ToString();
-            textBox_departure.Text = "郑州东站";
+            textBox_departure.Text = "二七广场";
             //comboBox_ticketNumber.MouseLeave += ComboBox_ticketNumber_MouseLeave;
             this.MouseMove += ComboBox_ticketNumber_MouseLeave;
 
@@ -109,6 +109,7 @@ namespace subway.Home
             if(ticket.endAddress==""||comboBox_ticketNumber.Text=="")
             {
                 MessageBox.Show("信息不完整，无法购票");
+                return;
             }
 
 

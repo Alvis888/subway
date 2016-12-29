@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using subway.Admin;
-using MainChoose;
 
 
 namespace subway.Admin
@@ -36,7 +35,7 @@ namespace subway.Admin
 
         private void button_Charge_Click(object sender, RoutedEventArgs e)
         {
-            Admin_deleteUser choose = new Admin_deleteUser();
+            chooseOpen choose = new chooseOpen();
             choose.ShowDialog();
             this.Close();
         }
